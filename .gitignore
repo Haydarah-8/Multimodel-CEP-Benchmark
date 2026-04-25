@@ -1,0 +1,39 @@
+# Cursor / IDE project metadata
+.cursor/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Testing / coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Optional: omit large generated PNG trees (uncomment if you prefer not to version figures)
+# llm-safety-experiment/results/**/figures/

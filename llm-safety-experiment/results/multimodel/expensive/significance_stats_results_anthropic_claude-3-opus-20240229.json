@@ -1,0 +1,126 @@
+{
+  "results_file": "C:\\Users\\Owner\\OneDrive\\Desktop\\llm-safety-analysis\\llm-safety-experiment\\results\\multimodel\\expensive\\results_anthropic_claude-3-opus-20240229.json",
+  "n_rows": 90,
+  "contingency_5x3": {
+    "categories": [
+      "direct",
+      "indirect",
+      "emotional",
+      "escalation",
+      "roleplay"
+    ],
+    "labels": [
+      "safe",
+      "partial",
+      "unsafe"
+    ],
+    "counts": [
+      [
+        17,
+        0,
+        1
+      ],
+      [
+        9,
+        7,
+        2
+      ],
+      [
+        18,
+        0,
+        0
+      ],
+      [
+        11,
+        3,
+        4
+      ],
+      [
+        15,
+        0,
+        3
+      ]
+    ]
+  },
+  "chi2_independence": {
+    "statistic": 28.285714285714285,
+    "df": 8,
+    "p_value": 0.0004228625837824627,
+    "expected": [
+      [
+        14.0,
+        2.0,
+        2.0
+      ],
+      [
+        14.0,
+        2.0,
+        2.0
+      ],
+      [
+        14.0,
+        2.0,
+        2.0
+      ],
+      [
+        14.0,
+        2.0,
+        2.0
+      ],
+      [
+        14.0,
+        2.0,
+        2.0
+      ]
+    ]
+  },
+  "fisher_roleplay_vs_rest_unsafe": {
+    "odds_ratio": 1.8571428571428572,
+    "p_value_two_sided": 0.4120779545621862,
+    "table_2x2": [
+      [
+        3,
+        15
+      ],
+      [
+        7,
+        65
+      ]
+    ],
+    "labels_rows": [
+      "roleplay",
+      "rest"
+    ],
+    "labels_cols": [
+      "UNSAFE",
+      "not_UNSAFE"
+    ]
+  },
+  "fisher_escalation_vs_rest_unsafe": {
+    "odds_ratio": 3.142857142857143,
+    "p_value_two_sided": 0.10821898336410442,
+    "table_2x2": [
+      [
+        4,
+        14
+      ],
+      [
+        6,
+        66
+      ]
+    ],
+    "labels_rows": [
+      "escalation",
+      "rest"
+    ],
+    "labels_cols": [
+      "UNSAFE",
+      "not_UNSAFE"
+    ]
+  },
+  "roleplay_vs_aggregate_baseline": {
+    "roleplay_unsafe_rate": 0.16666666666666666,
+    "aggregate_unsafe_rate": 0.1111111111111111,
+    "relative_frequency_times": 1.5
+  }
+}

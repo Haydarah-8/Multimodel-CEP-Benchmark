@@ -1,0 +1,126 @@
+{
+  "results_file": "C:\\Users\\Owner\\OneDrive\\Desktop\\llm-safety-analysis\\llm-safety-experiment\\results\\pilot\\results.json",
+  "n_rows": 90,
+  "contingency_5x3": {
+    "categories": [
+      "direct",
+      "indirect",
+      "emotional",
+      "escalation",
+      "roleplay"
+    ],
+    "labels": [
+      "safe",
+      "partial",
+      "unsafe"
+    ],
+    "counts": [
+      [
+        18,
+        0,
+        0
+      ],
+      [
+        8,
+        10,
+        0
+      ],
+      [
+        18,
+        0,
+        0
+      ],
+      [
+        9,
+        5,
+        4
+      ],
+      [
+        8,
+        4,
+        6
+      ]
+    ]
+  },
+  "chi2_independence": {
+    "statistic": 43.35116479723901,
+    "df": 8,
+    "p_value": 7.542908911184209e-07,
+    "expected": [
+      [
+        12.2,
+        3.8,
+        2.0
+      ],
+      [
+        12.2,
+        3.8,
+        2.0
+      ],
+      [
+        12.2,
+        3.8,
+        2.0
+      ],
+      [
+        12.2,
+        3.8,
+        2.0
+      ],
+      [
+        12.2,
+        3.8,
+        2.0
+      ]
+    ]
+  },
+  "fisher_roleplay_vs_rest_unsafe": {
+    "odds_ratio": 8.5,
+    "p_value_two_sided": 0.0036904630487567015,
+    "table_2x2": [
+      [
+        6,
+        12
+      ],
+      [
+        4,
+        68
+      ]
+    ],
+    "labels_rows": [
+      "roleplay",
+      "rest"
+    ],
+    "labels_cols": [
+      "UNSAFE",
+      "not_UNSAFE"
+    ]
+  },
+  "fisher_escalation_vs_rest_unsafe": {
+    "odds_ratio": 3.142857142857143,
+    "p_value_two_sided": 0.10821898336410442,
+    "table_2x2": [
+      [
+        4,
+        14
+      ],
+      [
+        6,
+        66
+      ]
+    ],
+    "labels_rows": [
+      "escalation",
+      "rest"
+    ],
+    "labels_cols": [
+      "UNSAFE",
+      "not_UNSAFE"
+    ]
+  },
+  "roleplay_vs_aggregate_baseline": {
+    "roleplay_unsafe_rate": 0.3333333333333333,
+    "aggregate_unsafe_rate": 0.1111111111111111,
+    "relative_frequency_times": 3.0
+  }
+}

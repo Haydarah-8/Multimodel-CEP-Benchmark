@@ -1,0 +1,126 @@
+{
+  "results_file": "C:\\Users\\Owner\\OneDrive\\Desktop\\llm-safety-analysis\\llm-safety-experiment\\results\\multimodel\\expensive\\results_openai_gpt-4.1.json",
+  "n_rows": 90,
+  "contingency_5x3": {
+    "categories": [
+      "direct",
+      "indirect",
+      "emotional",
+      "escalation",
+      "roleplay"
+    ],
+    "labels": [
+      "safe",
+      "partial",
+      "unsafe"
+    ],
+    "counts": [
+      [
+        18,
+        0,
+        0
+      ],
+      [
+        9,
+        7,
+        2
+      ],
+      [
+        18,
+        0,
+        0
+      ],
+      [
+        12,
+        2,
+        4
+      ],
+      [
+        10,
+        4,
+        4
+      ]
+    ]
+  },
+  "chi2_independence": {
+    "statistic": 27.150401836969003,
+    "df": 8,
+    "p_value": 0.0006659233271430998,
+    "expected": [
+      [
+        13.4,
+        2.6,
+        2.0
+      ],
+      [
+        13.4,
+        2.6,
+        2.0
+      ],
+      [
+        13.4,
+        2.6,
+        2.0
+      ],
+      [
+        13.4,
+        2.6,
+        2.0
+      ],
+      [
+        13.4,
+        2.6,
+        2.0
+      ]
+    ]
+  },
+  "fisher_roleplay_vs_rest_unsafe": {
+    "odds_ratio": 3.142857142857143,
+    "p_value_two_sided": 0.10821898336410442,
+    "table_2x2": [
+      [
+        4,
+        14
+      ],
+      [
+        6,
+        66
+      ]
+    ],
+    "labels_rows": [
+      "roleplay",
+      "rest"
+    ],
+    "labels_cols": [
+      "UNSAFE",
+      "not_UNSAFE"
+    ]
+  },
+  "fisher_escalation_vs_rest_unsafe": {
+    "odds_ratio": 3.142857142857143,
+    "p_value_two_sided": 0.10821898336410442,
+    "table_2x2": [
+      [
+        4,
+        14
+      ],
+      [
+        6,
+        66
+      ]
+    ],
+    "labels_rows": [
+      "escalation",
+      "rest"
+    ],
+    "labels_cols": [
+      "UNSAFE",
+      "not_UNSAFE"
+    ]
+  },
+  "roleplay_vs_aggregate_baseline": {
+    "roleplay_unsafe_rate": 0.2222222222222222,
+    "aggregate_unsafe_rate": 0.1111111111111111,
+    "relative_frequency_times": 2.0
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "results_file": "C:\\Users\\Owner\\OneDrive\\Desktop\\llm-safety-analysis\\llm-safety-experiment\\results\\multimodel\\cheap\\results_gemini_gemini-2.5-flash.json",
+  "n_rows": 90,
+  "contingency_5x3": {
+    "categories": [
+      "direct",
+      "indirect",
+      "emotional",
+      "escalation",
+      "roleplay"
+    ],
+    "labels": [
+      "safe",
+      "partial",
+      "unsafe"
+    ],
+    "counts": [
+      [
+        18,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        4
+      ],
+      [
+        18,
+        0,
+        0
+      ],
+      [
+        9,
+        2,
+        7
+      ],
+      [
+        7,
+        2,
+        9
+      ]
+    ]
+  },
+  "chi2_independence": {
+    "statistic": 38.666666666666664,
+    "df": 8,
+    "p_value": 5.6670492090214005e-06,
+    "expected": [
+      [
+        12.0,
+        2.0,
+        4.0
+      ],
+      [
+        12.0,
+        2.0,
+        4.0
+      ],
+      [
+        12.0,
+        2.0,
+        4.0
+      ],
+      [
+        12.0,
+        2.0,
+        4.0
+      ],
+      [
+        12.0,
+        2.0,
+        4.0
+      ]
+    ]
+  },
+  "fisher_roleplay_vs_rest_unsafe": {
+    "odds_ratio": 5.545454545454546,
+    "p_value_two_sided": 0.0034003237118129287,
+    "table_2x2": [
+      [
+        9,
+        9
+      ],
+      [
+        11,
+        61
+      ]
+    ],
+    "labels_rows": [
+      "roleplay",
+      "rest"
+    ],
+    "labels_cols": [
+      "UNSAFE",
+      "not_UNSAFE"
+    ]
+  },
+  "fisher_escalation_vs_rest_unsafe": {
+    "odds_ratio": 2.888111888111888,
+    "p_value_two_sided": 0.10854695958725741,
+    "table_2x2": [
+      [
+        7,
+        11
+      ],
+      [
+        13,
+        59
+      ]
+    ],
+    "labels_rows": [
+      "escalation",
+      "rest"
+    ],
+    "labels_cols": [
+      "UNSAFE",
+      "not_UNSAFE"
+    ]
+  },
+  "roleplay_vs_aggregate_baseline": {
+    "roleplay_unsafe_rate": 0.5,
+    "aggregate_unsafe_rate": 0.2222222222222222,
+    "relative_frequency_times": 2.25
+  }
+}
