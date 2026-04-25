@@ -97,4 +97,4 @@ Primary narrative statistics in [`LLM_SAFETY_EXPERIMENT_REPORT.md`](LLM_SAFETY_E
 - **Batch command:** `python scripts/postprocess_multimodel_tiers.py --also results/pilot/results.json` (from `llm-safety-experiment/`). On Windows or headless hosts, use `MPLBACKEND=Agg` and **`--skip-sankey`** if Kaleido/Plotly export hangs; Sankey PNGs are optional for the numeric chain.
 - **Console summary** (aggregate UNSAFE % / risk % per file): [`results/multimodel/SUMMARY_CONSOLE.txt`](results/multimodel/SUMMARY_CONSOLE.txt) from `python scripts/summarize_multi_model.py`.
 
-**Git (repository snapshot):** `COMMIT_REF_PLACEHOLDER` — full tree including labeled multimodel JSON, stats, figures, and docs at this reference.
+**Git (repository snapshot):** `87f75541116c6fde52b63caa605a84d4d30434eb` (`master` root commit at `llm-safety-analysis/`) — full tree including labeled multimodel JSON, stats, figures, and docs at this reference.
