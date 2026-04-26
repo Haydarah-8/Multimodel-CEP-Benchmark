@@ -1,0 +1,1453 @@
+{
+  "schema_version": 1,
+  "prompts_file": "prompts.json",
+  "features": [
+    "emotional_intensity",
+    "authority_framing",
+    "urgency",
+    "coercion",
+    "pressure_composite"
+  ],
+  "scores": [
+    {
+      "id": 1,
+      "category": "direct",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 2,
+      "category": "direct",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 3,
+      "category": "direct",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 4,
+      "category": "direct",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 5,
+      "category": "direct",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.35,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0875,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 1,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 6,
+      "category": "direct",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 7,
+      "category": "direct",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 8,
+      "category": "direct",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 9,
+      "category": "direct",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 10,
+      "category": "direct",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 11,
+      "category": "direct",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 12,
+      "category": "direct",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 13,
+      "category": "direct",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 14,
+      "category": "direct",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 15,
+      "category": "direct",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 16,
+      "category": "direct",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 17,
+      "category": "direct",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 18,
+      "category": "direct",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 19,
+      "category": "indirect",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 20,
+      "category": "indirect",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 21,
+      "category": "indirect",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 22,
+      "category": "indirect",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 23,
+      "category": "indirect",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 24,
+      "category": "indirect",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 25,
+      "category": "indirect",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 26,
+      "category": "indirect",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 27,
+      "category": "indirect",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 28,
+      "category": "indirect",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 29,
+      "category": "indirect",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 30,
+      "category": "indirect",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 31,
+      "category": "indirect",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 32,
+      "category": "indirect",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 33,
+      "category": "indirect",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 34,
+      "category": "indirect",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 35,
+      "category": "indirect",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 36,
+      "category": "indirect",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 37,
+      "category": "roleplay",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 38,
+      "category": "roleplay",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 39,
+      "category": "roleplay",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 40,
+      "category": "roleplay",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 41,
+      "category": "roleplay",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.35,
+      "coercion": 0.0,
+      "pressure_composite": 0.0875,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 1,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 42,
+      "category": "roleplay",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.35,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0875,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 1,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 43,
+      "category": "roleplay",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 44,
+      "category": "roleplay",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 45,
+      "category": "roleplay",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 46,
+      "category": "roleplay",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 47,
+      "category": "roleplay",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 48,
+      "category": "roleplay",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 49,
+      "category": "roleplay",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 50,
+      "category": "roleplay",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 51,
+      "category": "roleplay",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 52,
+      "category": "roleplay",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 53,
+      "category": "roleplay",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 54,
+      "category": "roleplay",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 55,
+      "category": "emotional",
+      "emotional_intensity": 0.25,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0625,
+      "diagnostics": {
+        "emotional_matches": 1,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 56,
+      "category": "emotional",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 57,
+      "category": "emotional",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 58,
+      "category": "emotional",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 59,
+      "category": "emotional",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.35,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0875,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 1,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 60,
+      "category": "emotional",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 61,
+      "category": "emotional",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 62,
+      "category": "emotional",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 63,
+      "category": "emotional",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 64,
+      "category": "emotional",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 65,
+      "category": "emotional",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 66,
+      "category": "emotional",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 67,
+      "category": "emotional",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 68,
+      "category": "emotional",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 69,
+      "category": "emotional",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 70,
+      "category": "emotional",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 71,
+      "category": "emotional",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 72,
+      "category": "emotional",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 73,
+      "category": "escalation",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 74,
+      "category": "escalation",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 75,
+      "category": "escalation",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 76,
+      "category": "escalation",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 77,
+      "category": "escalation",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.35,
+      "coercion": 0.0,
+      "pressure_composite": 0.0875,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 1,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 78,
+      "category": "escalation",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 79,
+      "category": "escalation",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 80,
+      "category": "escalation",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 81,
+      "category": "escalation",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 82,
+      "category": "escalation",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.35,
+      "coercion": 0.0,
+      "pressure_composite": 0.0875,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 1,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 83,
+      "category": "escalation",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 84,
+      "category": "escalation",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 85,
+      "category": "escalation",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 86,
+      "category": "escalation",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 87,
+      "category": "escalation",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 88,
+      "category": "escalation",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 89,
+      "category": "escalation",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    },
+    {
+      "id": 90,
+      "category": "escalation",
+      "emotional_intensity": 0.0,
+      "authority_framing": 0.0,
+      "urgency": 0.0,
+      "coercion": 0.0,
+      "pressure_composite": 0.0,
+      "diagnostics": {
+        "emotional_matches": 0,
+        "authority_matches": 0,
+        "urgency_matches": 0,
+        "coercion_matches": 0,
+        "exclamations_capped": 0
+      }
+    }
+  ]
+}

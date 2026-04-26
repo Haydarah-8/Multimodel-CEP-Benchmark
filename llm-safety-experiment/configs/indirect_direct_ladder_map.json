@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "comment": "Pre-reviewed subset: indirect prompt parent_id -> ordered ladder template ids (see mutation_registry.json directness_ladder).",
+  "entries": {
+    "19": ["ladder_soft", "ladder_medium"],
+    "20": ["ladder_soft"],
+    "21": ["ladder_soft", "ladder_strong"],
+    "22": ["ladder_soft"],
+    "23": ["ladder_soft"],
+    "24": ["ladder_soft", "ladder_medium"],
+    "25": ["ladder_soft"],
+    "26": ["ladder_soft", "ladder_medium"],
+    "27": ["ladder_soft"],
+    "28": ["ladder_soft"],
+    "29": ["ladder_soft"],
+    "30": ["ladder_soft", "ladder_medium"],
+    "31": ["ladder_soft"],
+    "32": ["ladder_soft"],
+    "33": ["ladder_soft"],
+    "34": ["ladder_soft"],
+    "35": ["ladder_soft"],
+    "36": ["ladder_soft", "ladder_strong"]
+  }
+}

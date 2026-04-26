@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "prompts_reference": "prompts.json",
+  "pressure_file": "results/prompt_pressure_scores.json",
+  "root": "results/multimodel",
+  "bootstrap_reps": 1000,
+  "cluster_key": "pressure_join_id (canonical prompt id)",
+  "disclaimer": "Associational / hypothetical proxies only — not causal identification.",
+  "pressure_unsafe": {
+    "n_rows": 810,
+    "n_clusters": 90,
+    "model": "LPM unsafe ~ 1 + pressure_composite + category dummies (direct ref)",
+    "coefficients": [
+      {
+        "name": "intercept",
+        "coef": 0.02375292363011355,
+        "ci95_low": -0.007375740829381707,
+        "ci95_high": 0.0690523657628917
+      },
+      {
+        "name": "pressure_composite",
+        "coef": 0.1930493611703567,
+        "ci95_low": -2.198203170976928,
+        "ci95_high": 2.916531140327074
+      },
+      {
+        "name": "cat__indirect",
+        "coef": 0.1490865825427259,
+        "ci95_low": -0.0014673564120693183,
+        "ci95_high": 0.3226516307728693
+      },
+      {
+        "name": "cat__emotional",
+        "coef": -0.02536166830653308,
+        "ci95_low": -0.07012932736200458,
+        "ci95_high": 0.006986354373202952
+      },
+      {
+        "name": "cat__escalation",
+        "coef": 0.2706665038770263,
+        "ci95_low": 0.08507701693561671,
+        "ci95_high": 0.4871155589465712
+      },
+      {
+        "name": "cat__roleplay",
+        "coef": 0.28301218288937174,
+        "ci95_low": 0.12223835904545524,
+        "ci95_high": 0.45637600120158534
+      }
+    ]
+  },
+  "refusal": {
+    "n_rows": 810,
+    "n_clusters": 90,
+    "model": "LPM safe ~ 1 + category dummies (direct ref); proxy for refusal shift vs direct",
+    "coefficients": [
+      {
+        "name": "intercept",
+        "coef": 0.956790123456788,
+        "ci95_low": 0.9047619047619043,
+        "ci95_high": 0.9999999999999988
+      },
+      {
+        "name": "cat__indirect",
+        "coef": -0.4876543209876524,
+        "ci95_low": -0.732760482360585,
+        "ci95_high": -0.25405967570441207
+      },
+      {
+        "name": "cat__emotional",
+        "coef": 0.043209876543211956,
+        "ci95_low": 0.0,
+        "ci95_high": 0.09523809523809519
+      },
+      {
+        "name": "cat__escalation",
+        "coef": -0.38888888888888673,
+        "ci95_low": -0.5957126872488119,
+        "ci95_high": -0.18604396549443006
+      },
+      {
+        "name": "cat__roleplay",
+        "coef": -0.3765432098765425,
+        "ci95_low": -0.5741228070175429,
+        "ci95_high": -0.19258547008547203
+      }
+    ]
+  },
+  "tier": {
+    "n_rows_tiered": 810,
+    "per_tier_slope_unsafe_on_category_index": {
+      "cheap": {
+        "n": 270,
+        "intercept": 0.014814814814814836,
+        "slope_category_index": 0.07222222222222217,
+        "note": "OLS unsafe on ordinal category index (descriptive only)"
+      },
+      "mid": {
+        "n": 270,
+        "intercept": 0.03333333333333347,
+        "slope_category_index": 0.0666666666666666,
+        "note": "OLS unsafe on ordinal category index (descriptive only)"
+      },
+      "expensive": {
+        "n": 270,
+        "intercept": 0.018518518518518486,
+        "slope_category_index": 0.06851851851851852,
+        "note": "OLS unsafe on ordinal category index (descriptive only)"
+      }
+    },
+    "tier_interaction": {
+      "n_rows": 810,
+      "n_clusters": 90,
+      "model": "LPM unsafe ~ cats + tier_mid/exp + cat×tier (direct ref cat, cheap ref tier)",
+      "coefficients": [
+        {
+          "name": "intercept",
+          "coef": 1.1223097777842393e-15,
+          "ci95_low": -1.8569810018003185e-15,
+          "ci95_high": 1.6957203749285582e-15
+        },
+        {
+          "name": "cat__indirect",
+          "coef": 0.1851851851851837,
+          "ci95_low": 0.01958061002178686,
+          "ci95_high": 0.37506944444444557
+        },
+        {
+          "name": "cat__emotional",
+          "coef": -7.91033905045424e-16,
+          "ci95_low": -1.609823385706477e-15,
+          "ci95_high": 1.5827616994812382e-15
+        },
+        {
+          "name": "cat__escalation",
+          "coef": 0.31481481481481294,
+          "ci95_low": 0.11111111111111104,
+          "ci95_high": 0.5384920634920624
+        },
+        {
+          "name": "cat__roleplay",
+          "coef": 0.29629629629629556,
+          "ci95_low": 0.1427944862155388,
+          "ci95_high": 0.4723214285714285
+        },
+        {
+          "name": "tier_mid",
+          "coef": 0.03703703703703637,
+          "ci95_low": -4.718447854656915e-16,
+          "ci95_high": 0.10256410256410271
+        },
+        {
+          "name": "tier_expensive",
+          "coef": 0.03703703703703662,
+          "ci95_low": -4.725386748560822e-16,
+          "ci95_high": 0.10256410256410237
+        },
+        {
+          "name": "cat__indirect__x_tier_mid",
+          "coef": -0.03703703703703672,
+          "ci95_low": -0.15530934343434366,
+          "ci95_high": 0.09033564814814811
+        },
+        {
+          "name": "cat__emotional__x_tier_mid",
+          "coef": -0.037037037037036515,
+          "ci95_low": -0.10256410256410227,
+          "ci95_high": 3.345414223421259e-16
+        },
+        {
+          "name": "cat__escalation__x_tier_mid",
+          "coef": -0.05555555555555516,
+          "ci95_low": -0.14622351332877673,
+          "ci95_high": 0.023737652955918908
+        },
+        {
+          "name": "cat__roleplay__x_tier_mid",
+          "coef": -0.018518518518518164,
+          "ci95_low": -0.13219298245613945,
+          "ci95_high": 0.0877232854864436
+        },
+        {
+          "name": "cat__indirect__x_tier_expensive",
+          "coef": -0.07407407407407371,
+          "ci95_low": -0.18100275197798482,
+          "ci95_high": -6.227657278756753e-17
+        },
+        {
+          "name": "cat__emotional__x_tier_expensive",
+          "coef": -0.037037037037036515,
+          "ci95_low": -0.10256410256410214,
+          "ci95_high": 2.9854591021560834e-16
+        },
+        {
+          "name": "cat__escalation__x_tier_expensive",
+          "coef": -0.0740740740740736,
+          "ci95_low": -0.17561712184873987,
+          "ci95_high": 0.011797591297593342
+        },
+        {
+          "name": "cat__roleplay__x_tier_expensive",
+          "coef": -0.018518518518518254,
+          "ci95_low": -0.10624853801169579,
+          "ci95_high": 0.06249999999999999
+        }
+      ]
+    }
+  }
+}

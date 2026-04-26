@@ -1,0 +1,428 @@
+{
+  "schema_version": 1,
+  "pressure_join": "parent_prompt_id | parent_id | id (see causal_proxy_data.pressure_join_id)",
+  "pressure_file": "results/prompt_pressure_scores.json",
+  "prompts_reference": "prompts.json",
+  "root": "results/multimodel",
+  "n_result_files": 9,
+  "n_rows_pooled": 810,
+  "pooled_spearman": {
+    "emotional_intensity": {
+      "n": 810,
+      "rho_unsafe": -0.046347062812313,
+      "p_unsafe": 0.18759349444074755,
+      "rho_risk": -0.06695325642364047,
+      "p_risk": 0.056816740805223524
+    },
+    "authority_framing": {
+      "n": 810,
+      "rho_unsafe": -0.00624561009818238,
+      "p_unsafe": 0.859131055348208,
+      "rho_risk": -0.05636100232774137,
+      "p_risk": 0.10896572300607925
+    },
+    "urgency": {
+      "n": 810,
+      "rho_unsafe": 0.06870171108000618,
+      "p_unsafe": 0.05063323096622749,
+      "rho_risk": 0.004569810999546598,
+      "p_risk": 0.896678039761631
+    },
+    "coercion": {
+      "n": 810,
+      "rho_unsafe": null,
+      "p_unsafe": null,
+      "rho_risk": null,
+      "p_risk": null,
+      "note": "constant_feature"
+    },
+    "pressure_composite": {
+      "n": 810,
+      "rho_unsafe": 0.02538533177641265,
+      "p_unsafe": 0.4706143979753468,
+      "rho_risk": -0.059532157210479775,
+      "p_risk": 0.09041735278779323
+    }
+  },
+  "per_file": [
+    {
+      "path": "results/multimodel/cheap/results_anthropic_claude-3-haiku-20240307.json",
+      "n": 90,
+      "by_feature": {
+        "emotional_intensity": {
+          "n": 90,
+          "rho_unsafe": -0.03955376178208136,
+          "p_unsafe": 0.7112785093719165,
+          "rho_risk": -0.05665926996700735,
+          "p_risk": 0.5958139849071312
+        },
+        "authority_framing": {
+          "n": 90,
+          "rho_unsafe": -0.06929211188850753,
+          "p_unsafe": 0.5163678153972396,
+          "rho_risk": -0.09925833339709302,
+          "p_risk": 0.3519644506376699
+        },
+        "urgency": {
+          "n": 90,
+          "rho_unsafe": 0.11968637508014937,
+          "p_unsafe": 0.26117538961647774,
+          "rho_risk": 0.04962916669854651,
+          "p_risk": 0.6422690358390045
+        },
+        "coercion": {
+          "n": 90,
+          "rho_unsafe": null,
+          "p_unsafe": null,
+          "rho_risk": null,
+          "p_risk": null,
+          "note": "constant_feature"
+        },
+        "pressure_composite": {
+          "n": 90,
+          "rho_unsafe": 0.01969498869293791,
+          "p_unsafe": 0.8538180112563718,
+          "rho_risk": -0.054308730442233596,
+          "p_risk": 0.6111789176290355
+        }
+      }
+    },
+    {
+      "path": "results/multimodel/cheap/results_gemini_gemini-2.5-flash.json",
+      "n": 90,
+      "by_feature": {
+        "emotional_intensity": {
+          "n": 90,
+          "rho_unsafe": -0.05665926996700735,
+          "p_unsafe": 0.5958139849071312,
+          "rho_risk": -0.07495316889958614,
+          "p_risk": 0.48260613975820443
+        },
+        "authority_framing": {
+          "n": 90,
+          "rho_unsafe": 0.04962916669854651,
+          "p_unsafe": 0.6422690358390045,
+          "rho_risk": 0.0,
+          "p_risk": 1.0
+        },
+        "urgency": {
+          "n": 90,
+          "rho_unsafe": 0.19851666679418603,
+          "p_unsafe": 0.06069882679543997,
+          "rho_risk": 0.13130643285972254,
+          "p_risk": 0.2173450462724756
+        },
+        "coercion": {
+          "n": 90,
+          "rho_unsafe": null,
+          "p_unsafe": null,
+          "rho_risk": null,
+          "p_risk": null,
+          "note": "constant_feature"
+        },
+        "pressure_composite": {
+          "n": 90,
+          "rho_unsafe": 0.14740941120034834,
+          "p_unsafe": 0.16559810084372778,
+          "rho_risk": 0.061580312044197,
+          "p_risk": 0.5642208325479416
+        }
+      }
+    },
+    {
+      "path": "results/multimodel/cheap/results_openai_gpt-4o-mini.json",
+      "n": 90,
+      "by_feature": {
+        "emotional_intensity": {
+          "n": 90,
+          "rho_unsafe": -0.041576537496303176,
+          "p_unsafe": 0.6972136687755415,
+          "rho_risk": -0.06573827785585624,
+          "p_risk": 0.5381606276611401
+        },
+        "authority_framing": {
+          "n": 90,
+          "rho_unsafe": -0.07283570407292297,
+          "p_unsafe": 0.4950946242920987,
+          "rho_risk": -0.11516335992621969,
+          "p_risk": 0.27975737463720224
+        },
+        "urgency": {
+          "n": 90,
+          "rho_unsafe": 0.10925355610938446,
+          "p_unsafe": 0.305337582010512,
+          "rho_risk": 0.023032671985243936,
+          "p_risk": 0.8293921002935793
+        },
+        "coercion": {
+          "n": 90,
+          "rho_unsafe": null,
+          "p_unsafe": null,
+          "rho_risk": null,
+          "p_risk": null,
+          "note": "constant_feature"
+        },
+        "pressure_composite": {
+          "n": 90,
+          "rho_unsafe": 0.009488503104035255,
+          "p_unsafe": 0.9292730103011304,
+          "rho_risk": -0.08641521041566756,
+          "p_risk": 0.4180186002251897
+        }
+      }
+    },
+    {
+      "path": "results/multimodel/expensive/results_anthropic_claude-3-opus-20240229.json",
+      "n": 90,
+      "by_feature": {
+        "emotional_intensity": {
+          "n": 90,
+          "rho_unsafe": -0.03747658444979307,
+          "p_unsafe": 0.7258227956245838,
+          "rho_risk": -0.05665926996700735,
+          "p_risk": 0.5958139849071312
+        },
+        "authority_framing": {
+          "n": 90,
+          "rho_unsafe": -0.06565321642986127,
+          "p_unsafe": 0.5386877449908941,
+          "rho_risk": -0.09925833339709302,
+          "p_risk": 0.3519644506376699
+        },
+        "urgency": {
+          "n": 90,
+          "rho_unsafe": -0.06565321642986127,
+          "p_unsafe": 0.5386877449908941,
+          "rho_risk": -0.09925833339709302,
+          "p_risk": 0.3519644506376699
+        },
+        "coercion": {
+          "n": 90,
+          "rho_unsafe": null,
+          "p_unsafe": null,
+          "rho_risk": null,
+          "p_risk": null,
+          "note": "constant_feature"
+        },
+        "pressure_composite": {
+          "n": 90,
+          "rho_unsafe": -0.10263385340699502,
+          "p_unsafe": 0.3357458735967079,
+          "rho_risk": -0.15516780126352456,
+          "p_risk": 0.1441980771375508
+        }
+      }
+    },
+    {
+      "path": "results/multimodel/expensive/results_gemini_gemini-2.5-pro.json",
+      "n": 90,
+      "by_feature": {
+        "emotional_intensity": {
+          "n": 90,
+          "rho_unsafe": -0.060292304068931685,
+          "p_unsafe": 0.5724128704984138,
+          "rho_risk": -0.08065374517945526,
+          "p_risk": 0.4498378923708131
+        },
+        "authority_framing": {
+          "n": 90,
+          "rho_unsafe": 0.03840830938432625,
+          "p_unsafe": 0.7192865223654958,
+          "rho_risk": -0.012844815128956886,
+          "p_risk": 0.9043578409013893
+        },
+        "urgency": {
+          "n": 90,
+          "rho_unsafe": 0.03840830938432625,
+          "p_unsafe": 0.7192865223654958,
+          "rho_risk": -0.012844815128956886,
+          "p_risk": 0.9043578409013893
+        },
+        "coercion": {
+          "n": 90,
+          "rho_unsafe": null,
+          "p_unsafe": null,
+          "rho_risk": null,
+          "p_risk": null,
+          "note": "constant_feature"
+        },
+        "pressure_composite": {
+          "n": 90,
+          "rho_unsafe": 0.030021322711376724,
+          "p_unsafe": 0.7787952165727715,
+          "rho_risk": -0.04685320137491339,
+          "p_risk": 0.6610121374644378
+        }
+      }
+    },
+    {
+      "path": "results/multimodel/expensive/results_openai_gpt-4.1.json",
+      "n": 90,
+      "by_feature": {
+        "emotional_intensity": {
+          "n": 90,
+          "rho_unsafe": -0.03747658444979307,
+          "p_unsafe": 0.7258227956245838,
+          "rho_risk": -0.06210570746624346,
+          "p_risk": 0.5608951991845124
+        },
+        "authority_framing": {
+          "n": 90,
+          "rho_unsafe": -0.06565321642986127,
+          "p_unsafe": 0.5386877449908941,
+          "rho_risk": -0.10879965486912048,
+          "p_risk": 0.3073633846599521
+        },
+        "urgency": {
+          "n": 90,
+          "rho_unsafe": 0.13130643285972254,
+          "p_unsafe": 0.2173450462724756,
+          "rho_risk": 0.03311293843842797,
+          "p_risk": 0.7566896717255451
+        },
+        "coercion": {
+          "n": 90,
+          "rho_unsafe": null,
+          "p_unsafe": null,
+          "rho_risk": null,
+          "p_risk": null,
+          "note": "constant_feature"
+        },
+        "pressure_composite": {
+          "n": 90,
+          "rho_unsafe": 0.030790156022098506,
+          "p_unsafe": 0.7732807171443054,
+          "rho_risk": -0.07394934115017078,
+          "p_risk": 0.4885054954599324
+        }
+      }
+    },
+    {
+      "path": "results/multimodel/mid/results_anthropic_claude-3-sonnet-20240229.json",
+      "n": 90,
+      "by_feature": {
+        "emotional_intensity": {
+          "n": 90,
+          "rho_unsafe": -0.03747658444979307,
+          "p_unsafe": 0.7258227956245838,
+          "rho_risk": -0.06210570746624346,
+          "p_risk": 0.5608951991845124
+        },
+        "authority_framing": {
+          "n": 90,
+          "rho_unsafe": -0.06565321642986127,
+          "p_unsafe": 0.5386877449908941,
+          "rho_risk": -0.10879965486912048,
+          "p_risk": 0.3073633846599521
+        },
+        "urgency": {
+          "n": 90,
+          "rho_unsafe": -0.06565321642986127,
+          "p_unsafe": 0.5386877449908941,
+          "rho_risk": -0.10879965486912048,
+          "p_risk": 0.3073633846599521
+        },
+        "coercion": {
+          "n": 90,
+          "rho_unsafe": null,
+          "p_unsafe": null,
+          "rho_risk": null,
+          "p_risk": null,
+          "note": "constant_feature"
+        },
+        "pressure_composite": {
+          "n": 90,
+          "rho_unsafe": -0.10263385340699502,
+          "p_unsafe": 0.3357458735967079,
+          "rho_risk": -0.17008348464539277,
+          "p_risk": 0.10900098186364642
+        }
+      }
+    },
+    {
+      "path": "results/multimodel/mid/results_gemini_gemini-2.5-pro.json",
+      "n": 90,
+      "by_feature": {
+        "emotional_intensity": {
+          "n": 90,
+          "rho_unsafe": -0.060292304068931685,
+          "p_unsafe": 0.5724128704984138,
+          "rho_risk": -0.08065374517945526,
+          "p_risk": 0.4498378923708131
+        },
+        "authority_framing": {
+          "n": 90,
+          "rho_unsafe": 0.03840830938432625,
+          "p_unsafe": 0.7192865223654958,
+          "rho_risk": -0.012844815128956886,
+          "p_risk": 0.9043578409013893
+        },
+        "urgency": {
+          "n": 90,
+          "rho_unsafe": 0.03840830938432625,
+          "p_unsafe": 0.7192865223654958,
+          "rho_risk": -0.012844815128956886,
+          "p_risk": 0.9043578409013893
+        },
+        "coercion": {
+          "n": 90,
+          "rho_unsafe": null,
+          "p_unsafe": null,
+          "rho_risk": null,
+          "p_risk": null,
+          "note": "constant_feature"
+        },
+        "pressure_composite": {
+          "n": 90,
+          "rho_unsafe": 0.030021322711376724,
+          "p_unsafe": 0.7787952165727715,
+          "rho_risk": -0.04685320137491339,
+          "p_risk": 0.6610121374644378
+        }
+      }
+    },
+    {
+      "path": "results/multimodel/mid/results_openai_gpt-4o.json",
+      "n": 90,
+      "by_feature": {
+        "emotional_intensity": {
+          "n": 90,
+          "rho_unsafe": -0.0435543272829384,
+          "p_unsafe": 0.6835597645454811,
+          "rho_risk": -0.0639202772100593,
+          "p_risk": 0.5494816697566941
+        },
+        "authority_framing": {
+          "n": 90,
+          "rho_unsafe": 0.09977756100296102,
+          "p_unsafe": 0.3494384534830876,
+          "rho_risk": 0.027994625547792713,
+          "p_risk": 0.7933836918270033
+        },
+        "urgency": {
+          "n": 90,
+          "rho_unsafe": 0.09977756100296102,
+          "p_unsafe": 0.3494384534830876,
+          "rho_risk": 0.027994625547792713,
+          "p_risk": 0.7933836918270033
+        },
+        "coercion": {
+          "n": 90,
+          "rho_unsafe": null,
+          "p_unsafe": null,
+          "rho_risk": null,
+          "p_risk": null,
+          "note": "constant_feature"
+        },
+        "pressure_composite": {
+          "n": 90,
+          "rho_unsafe": 0.11927843764914028,
+          "p_unsafe": 0.26281605345530656,
+          "rho_risk": 0.014587740712472028,
+          "p_risk": 0.8914543234955515
+        }
+      }
+    }
+  ],
+  "multiple_testing_note": "Descriptive Spearman correlations; 10 tests at feature-by-outcome level (no multiplicity adjustment applied). For reporting, consider Bonferroni alpha/=10 or FDR."
+}

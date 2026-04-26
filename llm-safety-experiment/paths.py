@@ -28,3 +28,13 @@ LEGACY_FLAT_ARCHIVE = RESULTS_ROOT / "archive" / "legacy_flat"
 
 PROMPTS_FILE = ROOT / "prompts.json"
 TIER_MODELS_CONFIG = ROOT / "configs" / "tier_models.json"
+
+
+def artifact_relpath(path: Path | str, *, base: Path | None = None) -> str:
+    """Return a POSIX path relative to package ROOT for portable JSON artifacts."""
+    p = Path(path).resolve()
+    b = (base if base is not None else ROOT).resolve()
+    try:
+        return p.relative_to(b).as_posix()
+    except ValueError:
+        return p.name

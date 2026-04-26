@@ -1,5 +1,5 @@
 {
-  "results_file": "C:\\Users\\Owner\\OneDrive\\Desktop\\llm-safety-analysis\\llm-safety-experiment\\results\\multimodel\\mid\\results_anthropic_claude-3-sonnet-20240229.json",
+  "results_file": "results/multimodel/mid/results_anthropic_claude-3-sonnet-20240229.json",
   "n_rows": 90,
   "contingency_5x3": {
     "categories": [

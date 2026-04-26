@@ -57,7 +57,8 @@ Use this section as a **copy-paste checklist** after changing prompts or startin
 
 | Step | Command | Output |
 | ---- | ------- | ------ |
-| 1 | `python scripts/compute_significance.py` | `results/pilot/significance_stats.json` + console (χ², Fisher) |
+| 1 | `python scripts/compute_significance.py` | `results/pilot/significance_stats.json` + console (χ², Cramér’s V, Wilson per category, Fisher + OR CI) |
+| 1b | `python scripts/compute_category_stress_indices.py` | `category_stress_indices.json` (RR vs direct, CPI, amplification); optional [`scripts/plot_category_stress.py`](scripts/plot_category_stress.py) |
 | 2 | `python scripts/verify_artifact_chain.py` | Exit 0 if `results/pilot/results.json` matches `results/pilot/significance_stats.json` |
 | 3 | `python scripts/generate_report_figures.py` | PNGs under `figures/` (optional slides) |
 
@@ -76,8 +77,10 @@ Use this section as a **copy-paste checklist** after changing prompts or startin
 | Step | Command | Notes |
 | ---- | ------- | ----- |
 | 1 | `python scripts/export_irr_subset.py --out irr_subset_for_rater2.json` | 100% UNSAFE + 20% of remainder (default); `--seed` for reproducibility |
+| 1b | `python scripts/export_irr_subset.py --include-all-partial --out irr_subset_for_rater2.json` | **Stratified emphasis:** 100% UNSAFE + **100% PARTIAL** + random fraction of **SAFE-only** remainder (same `--fraction`, `--seed`) |
 | 2 | Second rater labels offline; merge `label_rater2` into rows | See [`RESULTS_SCHEMA.md`](RESULTS_SCHEMA.md) |
-| 3 | (Optional) Adjudicate disagreements → `label_adjudicated`; extend analysis scripts if needed | Pre-specify adjudication rule before unblinding |
+| 3 | `python scripts/compute_irr_kappa.py --results <merged.json> --by-category` | Cohen’s κ overall + **per elicitation category** (PARTIAL-heavy strata matter) |
+| 4 | (Optional) Adjudicate disagreements → `label_adjudicated`; extend analysis scripts if needed | Pre-specify adjudication rule before unblinding |
 
 ### D. Intent-matched pairs (protocol only)
 
@@ -92,5 +95,7 @@ Use this section as a **copy-paste checklist** after changing prompts or startin
 
 ### F. Portfolio rigor (optional but high leverage)
 
-- **Dual coding:** use [`scripts/export_irr_subset.py`](scripts/export_irr_subset.py); report agreement and Cohen’s κ on a pre-specified subset before strong cross-model claims.
+- **Dual coding:** use [`scripts/export_irr_subset.py`](scripts/export_irr_subset.py) (consider `--include-all-partial`); report agreement and Cohen’s κ via [`scripts/compute_irr_kappa.py`](scripts/compute_irr_kappa.py) on a pre-specified subset before strong cross-model claims.
+- **Harm robustness:** pre-specify strict / risk / expanded scalars in [`ROBUSTNESS_HARM_OPERATIONALIZATIONS.md`](ROBUSTNESS_HARM_OPERATIONALIZATIONS.md); run [`scripts/compare_harm_operationalizations.py`](scripts/compare_harm_operationalizations.py).
+- **Cross-model mechanism table:** [`scripts/export_paired_error_table.py`](scripts/export_paired_error_table.py) → wide CSV for manual `failure_mode` coding ([`FAILURE_MODE_CODEBOOK.md`](FAILURE_MODE_CODEBOOK.md)).
 - **Labeling policy:** never treat [`scripts/seed_labels_from_pilot.py`](scripts/seed_labels_from_pilot.py) outputs as gold for multi-model adjudication—only as a pipeline stub.

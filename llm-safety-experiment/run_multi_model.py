@@ -120,6 +120,12 @@ def main() -> None:
         help="Only run the first N prompts from the bank (smoke test / cost cap).",
     )
     parser.add_argument(
+        "--mutation-wave",
+        default=None,
+        metavar="NAME",
+        help="Stored on each result row as mutation_wave (wave runs).",
+    )
+    parser.add_argument(
         "specs",
         nargs="*",
         help="provider:model pairs (or bare model id = openai)",
@@ -151,7 +157,7 @@ def main() -> None:
         except ValueError:
             rel = out_path
         print(f"=== {provider!r} / {model!r} -> {rel} ===")
-        results = run_all(provider, model, prompts)
+        results = run_all(provider, model, prompts, mutation_wave=args.mutation_wave)
         save_results(out_path, results)
         print(f"Wrote {len(results)} rows.\n")
 

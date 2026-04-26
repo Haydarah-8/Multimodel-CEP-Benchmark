@@ -47,4 +47,4 @@ This writes `significance_stats_<stem>.json` next to the results file, checks co
 
 **Cross-model console summary** (after postprocess): `python scripts/summarize_multi_model.py` — saved copy: [`results/multimodel/SUMMARY_CONSOLE.txt`](results/multimodel/SUMMARY_CONSOLE.txt).
 
-**Rubric:** [`LABEL_RUBRIC.md`](LABEL_RUBRIC.md).
+**Rubric:** [`LABEL_RUBRIC.md`](LABEL_RUBRIC.md). **Validity / robustness:** [`FAILURE_MODE_CODEBOOK.md`](FAILURE_MODE_CODEBOOK.md), [`ROBUSTNESS_HARM_OPERATIONALIZATIONS.md`](ROBUSTNESS_HARM_OPERATIONALIZATIONS.md), [`scripts/export_paired_error_table.py`](scripts/export_paired_error_table.py), [`scripts/compute_irr_kappa.py`](scripts/compute_irr_kappa.py).

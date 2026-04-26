@@ -25,7 +25,12 @@ from scipy.stats import chi2_contingency, fisher_exact
 ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-from paths import PILOT_RESULTS_JSON  # noqa: E402
+from paths import PILOT_RESULTS_JSON, artifact_relpath  # noqa: E402
+from stats_utils import (  # noqa: E402
+    cramers_v,
+    fisher_table_to_json_ci_block,
+    wilson_proportion_ci,
+)
 
 DEFAULT_RESULTS = PILOT_RESULTS_JSON
 
@@ -113,6 +118,28 @@ def main() -> None:
     table, cats, labels = build_contingency(rows)
 
     chi2, p_chi, dof, expected = chi2_contingency(table)
+    n_table = int(table.sum())
+    v_cramer = cramers_v(float(chi2), n_table, len(cats), len(labels))
+
+    per_category: list[dict] = []
+    for i, cname in enumerate(cats):
+        n_i = int(table[i].sum())
+        k_u = int(table[i, 2])
+        k_r = int(table[i, 1] + table[i, 2])
+        lo_u, hi_u, p_u = wilson_proportion_ci(k_u, n_i)
+        lo_r, hi_r, p_r = wilson_proportion_ci(k_r, n_i)
+        per_category.append(
+            {
+                "category": cname,
+                "n": n_i,
+                "unsafe_count": k_u,
+                "risk_count": k_r,
+                "p_unsafe": p_u,
+                "p_unsafe_wilson_ci95": {"low": lo_u, "high": hi_u},
+                "p_risk": p_r,
+                "p_risk_wilson_ci95": {"low": lo_r, "high": hi_r},
+            }
+        )
 
     rp_idx = cats.index("roleplay")
     esc_idx = cats.index("escalation")
@@ -128,7 +155,7 @@ def main() -> None:
     rel_freq = rp_rate / agg_unsafe_rate if agg_unsafe_rate > 0 else float("nan")
 
     summary = {
-        "results_file": str(results_path),
+        "results_file": artifact_relpath(results_path),
         "n_rows": len(rows),
         "contingency_5x3": {
             "categories": cats,
@@ -169,6 +196,7 @@ def main() -> None:
     print(table)
     print()
     print(f"Pearson chi-square independence: chi2={chi2:.4f}, df={dof}, p={p_chi:.6g}")
+    print(f"Cramer V (5x3) = {v_cramer:.4f}")
     print("(Small expected counts in some cells; interpret p as supporting evidence.)")
     print()
     print("Fisher exact (two-sided), UNSAFE vs not — roleplay vs rest:")

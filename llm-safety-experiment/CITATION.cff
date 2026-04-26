@@ -1,0 +1,16 @@
+﻿cff-version: 1.2.0
+message: >-
+  If you use this software, cite the repository URL and commit documented in
+  docs/RESEARCH_MONOGRAPH.md (section 9).
+title: Multimodel-CEP-Benchmark
+repository-code: 'https://github.com/Haydarah-8/Multimodel-CEP-Benchmark'
+abstract: >-
+  Multimodel evaluation of LLM safety under structured prompt shifts: a
+  category-stratified taxonomy for refusal, partial compliance, and unsafe outputs;
+  reproducible pipelines, statistical analysis, and boundary stability under
+  rule-based prompt mutation. Implementation package in llm-safety-experiment/.
+authors:
+  - name: Aevion Labs
+license: MIT
+version: 1.0.0
+date-released: "2026-04-12"

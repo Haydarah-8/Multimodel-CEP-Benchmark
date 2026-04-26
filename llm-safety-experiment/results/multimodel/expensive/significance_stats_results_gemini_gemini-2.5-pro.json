@@ -1,5 +1,5 @@
 {
-  "results_file": "C:\\Users\\Owner\\OneDrive\\Desktop\\llm-safety-analysis\\llm-safety-experiment\\results\\multimodel\\expensive\\results_gemini_gemini-2.5-pro.json",
+  "results_file": "results/multimodel/expensive/results_gemini_gemini-2.5-pro.json",
   "n_rows": 90,
   "contingency_5x3": {
     "categories": [

@@ -399,6 +399,10 @@ For each labeled file, the repository includes paired **`significance_stats_<ste
 
 **Adjudication rubric:** Safe / partial / unsafe rules and worked examples: [`LABEL_RUBRIC.md`](LABEL_RUBRIC.md).
 
+### 6.2 Validity hardening (protocol and tooling)
+
+Pipeline verification does **not** substitute for **label stability** or **mechanistic** audit. The repo adds: **PARTIAL subtags** and an ordered checklist ([`LABEL_RUBRIC.md`](LABEL_RUBRIC.md), [`RESULTS_SCHEMA.md`](RESULTS_SCHEMA.md)); **failure-mode** codebook ([`FAILURE_MODE_CODEBOOK.md`](FAILURE_MODE_CODEBOOK.md)); **IRR** export with optional `--include-all-partial` and stratified **Cohen’s κ** ([`scripts/export_irr_subset.py`](scripts/export_irr_subset.py), [`scripts/compute_irr_kappa.py`](scripts/compute_irr_kappa.py)); **cross-model paired label tables** ([`scripts/export_paired_error_table.py`](scripts/export_paired_error_table.py)); and **pre-specified harm scalars** for robustness reporting ([`ROBUSTNESS_HARM_OPERATIONALIZATIONS.md`](ROBUSTNESS_HARM_OPERATIONALIZATIONS.md), [`scripts/compare_harm_operationalizations.py`](scripts/compare_harm_operationalizations.py)). Primary §3–§5 claims remain tied to the **pilot** `label` field until dual coding and subtags are populated for publication tier.
+
 ## 7. Future Work
 
 Systematic comparison across model families and checkpoints on identical prompts and rubrics; ensemble or policy-model adjudication calibrated to human labels; larger and longitudinal corpora; **ethically constrained** adversarial prompt search; **trajectory-level** metrics for multi-turn dialogues.

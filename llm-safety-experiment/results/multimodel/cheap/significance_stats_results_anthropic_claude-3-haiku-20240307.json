@@ -1,5 +1,5 @@
 {
-  "results_file": "C:\\Users\\Owner\\OneDrive\\Desktop\\llm-safety-analysis\\llm-safety-experiment\\results\\multimodel\\cheap\\results_anthropic_claude-3-haiku-20240307.json",
+  "results_file": "results/multimodel/cheap/results_anthropic_claude-3-haiku-20240307.json",
   "n_rows": 90,
   "contingency_5x3": {
     "categories": [

@@ -1,0 +1,159 @@
+{
+  "n_models": 3,
+  "model_stems": [
+    "results_anthropic_claude-3-haiku-20240307",
+    "results_gemini_gemini-2.5-flash",
+    "results_openai_gpt-4o-mini"
+  ],
+  "n_prompts_any_label": 90,
+  "n_prompts_complete_across_models": 90,
+  "boundary_prompts_range_ge_1": 14,
+  "boundary_prompts_range_eq_2_polar": 10,
+  "mean_majority_fraction": 0.9407407407407407,
+  "fleiss_kappa_ordinal_categories": 0.7468908193237922,
+  "pairwise_directed_label_counts": {
+    "results_anthropic_claude-3-haiku-20240307": {
+      "results_gemini_gemini-2.5-flash": {
+        "partial|partial": 8,
+        "partial|safe": 1,
+        "safe|partial": 2,
+        "safe|safe": 59,
+        "safe|unsafe": 9,
+        "unsafe|unsafe": 11
+      },
+      "results_openai_gpt-4o-mini": {
+        "partial|partial": 8,
+        "partial|safe": 1,
+        "safe|partial": 4,
+        "safe|safe": 63,
+        "safe|unsafe": 3,
+        "unsafe|partial": 1,
+        "unsafe|safe": 1,
+        "unsafe|unsafe": 9
+      }
+    },
+    "results_gemini_gemini-2.5-flash": {
+      "results_anthropic_claude-3-haiku-20240307": {
+        "partial|partial": 8,
+        "partial|safe": 2,
+        "safe|partial": 1,
+        "safe|safe": 59,
+        "unsafe|safe": 9,
+        "unsafe|unsafe": 11
+      },
+      "results_openai_gpt-4o-mini": {
+        "partial|partial": 10,
+        "safe|safe": 60,
+        "unsafe|partial": 3,
+        "unsafe|safe": 5,
+        "unsafe|unsafe": 12
+      }
+    },
+    "results_openai_gpt-4o-mini": {
+      "results_anthropic_claude-3-haiku-20240307": {
+        "partial|partial": 8,
+        "partial|safe": 4,
+        "partial|unsafe": 1,
+        "safe|partial": 1,
+        "safe|safe": 63,
+        "safe|unsafe": 1,
+        "unsafe|safe": 3,
+        "unsafe|unsafe": 9
+      },
+      "results_gemini_gemini-2.5-flash": {
+        "partial|partial": 10,
+        "partial|unsafe": 3,
+        "safe|safe": 60,
+        "safe|unsafe": 5,
+        "unsafe|unsafe": 12
+      }
+    }
+  },
+  "marginal_shift_adjacent_by_model": {
+    "results_anthropic_claude-3-haiku-20240307": [
+      {
+        "from_category": "direct",
+        "to_category": "indirect",
+        "delta_p_partial": 0.2777777777777778,
+        "delta_p_unsafe": 0.16666666666666666
+      },
+      {
+        "from_category": "indirect",
+        "to_category": "emotional",
+        "delta_p_partial": -0.3333333333333333,
+        "delta_p_unsafe": -0.16666666666666666
+      },
+      {
+        "from_category": "emotional",
+        "to_category": "escalation",
+        "delta_p_partial": 0.1111111111111111,
+        "delta_p_unsafe": 0.2777777777777778
+      },
+      {
+        "from_category": "escalation",
+        "to_category": "roleplay",
+        "delta_p_partial": -0.1111111111111111,
+        "delta_p_unsafe": -0.11111111111111113
+      }
+    ],
+    "results_gemini_gemini-2.5-flash": [
+      {
+        "from_category": "direct",
+        "to_category": "indirect",
+        "delta_p_partial": 0.3333333333333333,
+        "delta_p_unsafe": 0.2222222222222222
+      },
+      {
+        "from_category": "indirect",
+        "to_category": "emotional",
+        "delta_p_partial": -0.3333333333333333,
+        "delta_p_unsafe": -0.2222222222222222
+      },
+      {
+        "from_category": "emotional",
+        "to_category": "escalation",
+        "delta_p_partial": 0.1111111111111111,
+        "delta_p_unsafe": 0.3888888888888889
+      },
+      {
+        "from_category": "escalation",
+        "to_category": "roleplay",
+        "delta_p_partial": 0.0,
+        "delta_p_unsafe": 0.1111111111111111
+      }
+    ],
+    "results_openai_gpt-4o-mini": [
+      {
+        "from_category": "direct",
+        "to_category": "indirect",
+        "delta_p_partial": 0.3888888888888889,
+        "delta_p_unsafe": 0.16666666666666666
+      },
+      {
+        "from_category": "indirect",
+        "to_category": "emotional",
+        "delta_p_partial": -0.3888888888888889,
+        "delta_p_unsafe": -0.16666666666666666
+      },
+      {
+        "from_category": "emotional",
+        "to_category": "escalation",
+        "delta_p_partial": 0.1111111111111111,
+        "delta_p_unsafe": 0.2777777777777778
+      },
+      {
+        "from_category": "escalation",
+        "to_category": "roleplay",
+        "delta_p_partial": 0.1111111111111111,
+        "delta_p_unsafe": -0.05555555555555558
+      }
+    ]
+  },
+  "source": "results\\multimodel\\cheap",
+  "ordinal_map": {
+    "safe": 0,
+    "partial": 1,
+    "unsafe": 2
+  },
+  "per_prompt_complete_n": 90
+}

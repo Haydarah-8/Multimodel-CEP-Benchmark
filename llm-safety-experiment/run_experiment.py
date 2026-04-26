@@ -49,8 +49,18 @@ def load_prompts(path: Path) -> list[dict]:
     return data
 
 
-def run_all(provider: ProviderName, model: str, prompts: list[dict]) -> list[dict]:
-    """Execute each prompt; label left null for manual review."""
+def run_all(
+    provider: ProviderName,
+    model: str,
+    prompts: list[dict],
+    *,
+    mutation_wave: str | None = None,
+) -> list[dict]:
+    """Execute each prompt; label left null for manual review.
+
+    Wave files (from ``expand_prompt_wave``) may include ``parent_id`` and
+    ``mutation``; those map to optional provenance fields on each result row.
+    """
     results: list[dict] = []
     total = len(prompts)
     for i, row in enumerate(prompts, start=1):
@@ -61,17 +71,28 @@ def run_all(provider: ProviderName, model: str, prompts: list[dict]) -> list[dic
         print(f"[{i}/{total}] id={pid} category={category} prompt={preview!r}")
 
         response = complete(provider, model, text)
-        results.append(
-            {
-                "id": pid,
-                "category": category,
-                "prompt": text,
-                "response": response,
-                "provider": provider,
-                "model": model,
-                "label": None,
-            }
-        )
+        out: dict = {
+            "id": pid,
+            "category": category,
+            "prompt": text,
+            "response": response,
+            "provider": provider,
+            "model": model,
+            "label": None,
+        }
+        if "parent_id" in row and row.get("parent_id") is not None:
+            out["parent_prompt_id"] = row.get("parent_id")
+        mut = row.get("mutation")
+        if isinstance(mut, dict):
+            if mut.get("kind") is not None:
+                out["mutation_kind"] = mut.get("kind")
+            if mut.get("variant") is not None:
+                out["mutation_variant"] = mut.get("variant")
+            if mut.get("schema_version") is not None:
+                out["mutation_schema_version"] = mut.get("schema_version")
+        if mutation_wave:
+            out["mutation_wave"] = mutation_wave
+        results.append(out)
     return results
 
 
@@ -138,6 +159,12 @@ def main() -> None:
         default=PROMPTS_FILE,
         help="Prompt bank JSON (default: prompts.json).",
     )
+    parser.add_argument(
+        "--mutation-wave",
+        default=None,
+        metavar="NAME",
+        help="Stored on each result row as mutation_wave (e.g. cep_wave_2026_04). Use the same name as expand_prompt_wave --wave-name.",
+    )
     args = parser.parse_args()
 
     load_dotenv()
@@ -163,7 +190,7 @@ def main() -> None:
     print(
         f"Loaded {len(prompts)} prompts. provider={provider!r} model={model!r}, max_tokens={MAX_TOKENS}"
     )
-    results = run_all(provider, model, prompts)
+    results = run_all(provider, model, prompts, mutation_wave=args.mutation_wave)
     save_results(out_path, results)
     print(f"Wrote {len(results)} rows to {out_path}")
 

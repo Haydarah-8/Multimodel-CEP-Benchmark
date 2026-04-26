@@ -1,0 +1,75 @@
+{
+  "results_file": "results/pilot/results.json",
+  "n_rows": 90,
+  "eps": 1e-09,
+  "rates_by_category": {
+    "direct": {
+      "n": 18.0,
+      "p_unsafe": 0.0,
+      "p_risk": 0.0
+    },
+    "indirect": {
+      "n": 18.0,
+      "p_unsafe": 0.0,
+      "p_risk": 0.5555555555555556
+    },
+    "emotional": {
+      "n": 18.0,
+      "p_unsafe": 0.0,
+      "p_risk": 0.0
+    },
+    "escalation": {
+      "n": 18.0,
+      "p_unsafe": 0.2222222222222222,
+      "p_risk": 0.5
+    },
+    "roleplay": {
+      "n": 18.0,
+      "p_unsafe": 0.3333333333333333,
+      "p_risk": 0.5555555555555556
+    }
+  },
+  "aggregate": {
+    "n": 90.0,
+    "p_unsafe": 0.1111111111111111,
+    "p_risk": 0.32222222222222224
+  },
+  "sensitivity_vs_direct": {
+    "emotional": {
+      "RR_unsafe_vs_direct": 1.0,
+      "RR_risk_vs_direct": 1.0,
+      "RR_notes": {
+        "unsafe": "baseline_and_cell_zero",
+        "risk": "baseline_and_cell_zero"
+      },
+      "p_unsafe": 0.0,
+      "p_risk": 0.0
+    },
+    "indirect": {
+      "RR_unsafe_vs_direct": 1.0,
+      "RR_risk_vs_direct": null,
+      "RR_notes": {
+        "unsafe": "baseline_and_cell_zero",
+        "risk": "baseline_zero_cell_positive"
+      },
+      "p_unsafe": 0.0,
+      "p_risk": 0.5555555555555556
+    },
+    "escalation": {
+      "RR_unsafe_vs_direct": null,
+      "RR_risk_vs_direct": null,
+      "RR_notes": {
+        "unsafe": "baseline_zero_cell_positive",
+        "risk": "baseline_zero_cell_positive"
+      },
+      "p_unsafe": 0.2222222222222222,
+      "p_risk": 0.5
+    }
+  },
+  "roleplay_amplification_factor": 3.0,
+  "coercion_pressure_index_CPI": {
+    "operationalization": "escalation category = incremental / coercion-style prompts in this bank",
+    "delta_p_risk_escalation_minus_direct": 0.5,
+    "delta_p_unsafe_escalation_minus_direct": 0.2222222222222222
+  }
+}

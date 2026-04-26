@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "feature_version": 1,
+  "n_models": 9,
+  "explained_variance_ratio": [
+    0.6310815937714417,
+    0.21172550298394055
+  ],
+  "feature_names": [
+    "direct_refusal",
+    "direct_unsafe",
+    "direct_risk",
+    "indirect_refusal",
+    "indirect_unsafe",
+    "indirect_risk",
+    "emotional_refusal",
+    "emotional_unsafe",
+    "emotional_risk",
+    "escalation_refusal",
+    "escalation_unsafe",
+    "escalation_risk",
+    "roleplay_refusal",
+    "roleplay_unsafe",
+    "roleplay_risk",
+    "ASS_value_imputed",
+    "ESI_risk_gap",
+    "ESI_unsafe_gap"
+  ],
+  "pc_loadings_rows_are_pcs": [
+    [
+      -0.17503656127335476,
+      0.10369417793697662,
+      0.17503656127335465,
+      -0.2397455149319498,
+      0.3035903992175163,
+      0.23974551493195,
+      -4.865926326702818e-20,
+      -3.5210109603963086e-32,
+      0.0,
+      -0.31644266901994356,
+      0.31304204233819893,
+      0.31644266901994367,
+      -0.2664362667266259,
+      0.3073833471970212,
+      0.26643626672662585,
+      0.18242434132904928,
+      0.288813693994971,
+      0.2634931516740087
+    ],
+    [
+      0.4695668334012363,
+      -0.4528046239853427,
+      -0.4695668334012359,
+      -0.023280558979101286,
+      0.042962215185768544,
+      0.023280558979101054,
+      1.5593888281576657e-19,
+      1.1283823031458017e-31,
+      0.0,
+      0.09561330639226416,
+      0.07333320763731377,
+      -0.09561330639226423,
+      -0.244019136589755,
+      0.06840265520459411,
+      0.24401913658975502,
+      -0.30531340671879614,
+      0.22330932779964544,
+      0.24604415884473485
+    ]
+  ],
+  "models": [
+    {
+      "path": "results/multimodel/cheap/figures/results_anthropic_claude-3-haiku-20240307/model_fingerprint.json",
+      "provider": "anthropic",
+      "model": "claude-3-haiku-20240307",
+      "label": "claude-3-haiku-20240307"
+    },
+    {
+      "path": "results/multimodel/cheap/figures/results_gemini_gemini-2.5-flash/model_fingerprint.json",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "label": "gemini-2.5-flash"
+    },
+    {
+      "path": "results/multimodel/cheap/figures/results_openai_gpt-4o-mini/model_fingerprint.json",
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "label": "gpt-4o-mini"
+    },
+    {
+      "path": "results/multimodel/expensive/figures/results_anthropic_claude-3-opus-20240229/model_fingerprint.json",
+      "provider": "anthropic",
+      "model": "claude-3-opus-20240229",
+      "label": "claude-3-opus-20240229"
+    },
+    {
+      "path": "results/multimodel/expensive/figures/results_gemini_gemini-2.5-pro/model_fingerprint.json",
+      "provider": "gemini",
+      "model": "gemini-2.5-pro",
+      "label": "gemini-2.5-pro"
+    },
+    {
+      "path": "results/multimodel/expensive/figures/results_openai_gpt-4.1/model_fingerprint.json",
+      "provider": "openai",
+      "model": "gpt-4.1",
+      "label": "gpt-4.1"
+    },
+    {
+      "path": "results/multimodel/mid/figures/results_anthropic_claude-3-sonnet-20240229/model_fingerprint.json",
+      "provider": "anthropic",
+      "model": "claude-3-sonnet-20240229",
+      "label": "claude-3-sonnet-20240229"
+    },
+    {
+      "path": "results/multimodel/mid/figures/results_gemini_gemini-2.5-pro/model_fingerprint.json",
+      "provider": "gemini",
+      "model": "gemini-2.5-pro",
+      "label": "gemini-2.5-pro"
+    },
+    {
+      "path": "results/multimodel/mid/figures/results_openai_gpt-4o/model_fingerprint.json",
+      "provider": "openai",
+      "model": "gpt-4o",
+      "label": "gpt-4o"
+    }
+  ]
+}

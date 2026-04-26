@@ -1,5 +1,5 @@
 {
-  "results_file": "C:\\Users\\Owner\\OneDrive\\Desktop\\llm-safety-analysis\\llm-safety-experiment\\results\\multimodel\\mid\\results_openai_gpt-4o.json",
+  "results_file": "results/multimodel/mid/results_openai_gpt-4o.json",
   "n_rows": 90,
   "contingency_5x3": {
     "categories": [

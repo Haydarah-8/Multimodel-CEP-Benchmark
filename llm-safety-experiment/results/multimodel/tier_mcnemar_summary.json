@@ -1,0 +1,230 @@
+{
+  "contrasts": [
+    {
+      "provider": "openai",
+      "contrast": "cheap_vs_mid",
+      "file_a": "results/multimodel/cheap/results_openai_gpt-4o-mini.json",
+      "file_b": "results/multimodel/mid/results_openai_gpt-4o.json",
+      "n_paired": 90,
+      "warnings": [],
+      "unsafe": {
+        "outcome": "unsafe",
+        "n_discordant": 5,
+        "n_first_yes_second_no": 2,
+        "n_first_no_second_yes": 3,
+        "paired_odds_ratio_B_vs_A": 1.5,
+        "mcnemar_exact_binomial_p_two_sided": 1.0
+      },
+      "risk": {
+        "outcome": "risk",
+        "n_discordant": 3,
+        "n_first_yes_second_no": 2,
+        "n_first_no_second_yes": 1,
+        "paired_odds_ratio_B_vs_A": 0.5,
+        "mcnemar_exact_binomial_p_two_sided": 1.0
+      },
+      "mcnemar_note": "Exact binomial on min(discordant); SciPy two-sided p can be 1.0 for nearly balanced splits."
+    },
+    {
+      "provider": "openai",
+      "contrast": "mid_vs_expensive",
+      "file_a": "results/multimodel/mid/results_openai_gpt-4o.json",
+      "file_b": "results/multimodel/expensive/results_openai_gpt-4.1.json",
+      "n_paired": 90,
+      "warnings": [],
+      "unsafe": {
+        "outcome": "unsafe",
+        "n_discordant": 3,
+        "n_first_yes_second_no": 3,
+        "n_first_no_second_yes": 0,
+        "paired_odds_ratio_B_vs_A": 0.0,
+        "mcnemar_exact_binomial_p_two_sided": 0.25
+      },
+      "risk": {
+        "outcome": "risk",
+        "n_discordant": 3,
+        "n_first_yes_second_no": 2,
+        "n_first_no_second_yes": 1,
+        "paired_odds_ratio_B_vs_A": 0.5,
+        "mcnemar_exact_binomial_p_two_sided": 1.0
+      },
+      "mcnemar_note": "Exact binomial on min(discordant); SciPy two-sided p can be 1.0 for nearly balanced splits."
+    },
+    {
+      "provider": "openai",
+      "contrast": "cheap_vs_expensive",
+      "file_a": "results/multimodel/cheap/results_openai_gpt-4o-mini.json",
+      "file_b": "results/multimodel/expensive/results_openai_gpt-4.1.json",
+      "n_paired": 90,
+      "warnings": [],
+      "unsafe": {
+        "outcome": "unsafe",
+        "n_discordant": 4,
+        "n_first_yes_second_no": 3,
+        "n_first_no_second_yes": 1,
+        "paired_odds_ratio_B_vs_A": 0.3333333333333333,
+        "mcnemar_exact_binomial_p_two_sided": 0.625
+      },
+      "risk": {
+        "outcome": "risk",
+        "n_discordant": 4,
+        "n_first_yes_second_no": 3,
+        "n_first_no_second_yes": 1,
+        "paired_odds_ratio_B_vs_A": 0.3333333333333333,
+        "mcnemar_exact_binomial_p_two_sided": 0.625
+      },
+      "mcnemar_note": "Exact binomial on min(discordant); SciPy two-sided p can be 1.0 for nearly balanced splits."
+    },
+    {
+      "provider": "anthropic",
+      "contrast": "cheap_vs_mid",
+      "file_a": "results/multimodel/cheap/results_anthropic_claude-3-haiku-20240307.json",
+      "file_b": "results/multimodel/mid/results_anthropic_claude-3-sonnet-20240229.json",
+      "n_paired": 90,
+      "warnings": [],
+      "unsafe": {
+        "outcome": "unsafe",
+        "n_discordant": 7,
+        "n_first_yes_second_no": 4,
+        "n_first_no_second_yes": 3,
+        "paired_odds_ratio_B_vs_A": 0.75,
+        "mcnemar_exact_binomial_p_two_sided": 1.0
+      },
+      "risk": {
+        "outcome": "risk",
+        "n_discordant": 9,
+        "n_first_yes_second_no": 3,
+        "n_first_no_second_yes": 6,
+        "paired_odds_ratio_B_vs_A": 2.0,
+        "mcnemar_exact_binomial_p_two_sided": 0.5078125
+      },
+      "mcnemar_note": "Exact binomial on min(discordant); SciPy two-sided p can be 1.0 for nearly balanced splits."
+    },
+    {
+      "provider": "anthropic",
+      "contrast": "mid_vs_expensive",
+      "file_a": "results/multimodel/mid/results_anthropic_claude-3-sonnet-20240229.json",
+      "file_b": "results/multimodel/expensive/results_anthropic_claude-3-opus-20240229.json",
+      "n_paired": 90,
+      "warnings": [],
+      "unsafe": {
+        "outcome": "unsafe",
+        "n_discordant": 4,
+        "n_first_yes_second_no": 2,
+        "n_first_no_second_yes": 2,
+        "paired_odds_ratio_B_vs_A": 1.0,
+        "mcnemar_exact_binomial_p_two_sided": 1.0
+      },
+      "risk": {
+        "outcome": "risk",
+        "n_discordant": 5,
+        "n_first_yes_second_no": 4,
+        "n_first_no_second_yes": 1,
+        "paired_odds_ratio_B_vs_A": 0.25,
+        "mcnemar_exact_binomial_p_two_sided": 0.375
+      },
+      "mcnemar_note": "Exact binomial on min(discordant); SciPy two-sided p can be 1.0 for nearly balanced splits."
+    },
+    {
+      "provider": "anthropic",
+      "contrast": "cheap_vs_expensive",
+      "file_a": "results/multimodel/cheap/results_anthropic_claude-3-haiku-20240307.json",
+      "file_b": "results/multimodel/expensive/results_anthropic_claude-3-opus-20240229.json",
+      "n_paired": 90,
+      "warnings": [],
+      "unsafe": {
+        "outcome": "unsafe",
+        "n_discordant": 3,
+        "n_first_yes_second_no": 2,
+        "n_first_no_second_yes": 1,
+        "paired_odds_ratio_B_vs_A": 0.5,
+        "mcnemar_exact_binomial_p_two_sided": 1.0
+      },
+      "risk": {
+        "outcome": "risk",
+        "n_discordant": 6,
+        "n_first_yes_second_no": 3,
+        "n_first_no_second_yes": 3,
+        "paired_odds_ratio_B_vs_A": 1.0,
+        "mcnemar_exact_binomial_p_two_sided": 1.0
+      },
+      "mcnemar_note": "Exact binomial on min(discordant); SciPy two-sided p can be 1.0 for nearly balanced splits."
+    },
+    {
+      "provider": "gemini",
+      "contrast": "cheap_vs_mid",
+      "file_a": "results/multimodel/cheap/results_gemini_gemini-2.5-flash.json",
+      "file_b": "results/multimodel/mid/results_gemini_gemini-2.5-pro.json",
+      "n_paired": 90,
+      "warnings": [],
+      "unsafe": {
+        "outcome": "unsafe",
+        "n_discordant": 4,
+        "n_first_yes_second_no": 1,
+        "n_first_no_second_yes": 3,
+        "paired_odds_ratio_B_vs_A": 3.0,
+        "mcnemar_exact_binomial_p_two_sided": 0.625
+      },
+      "risk": {
+        "outcome": "risk",
+        "n_discordant": 5,
+        "n_first_yes_second_no": 1,
+        "n_first_no_second_yes": 4,
+        "paired_odds_ratio_B_vs_A": 4.0,
+        "mcnemar_exact_binomial_p_two_sided": 0.375
+      },
+      "mcnemar_note": "Exact binomial on min(discordant); SciPy two-sided p can be 1.0 for nearly balanced splits."
+    },
+    {
+      "provider": "gemini",
+      "contrast": "mid_vs_expensive",
+      "file_a": "results/multimodel/mid/results_gemini_gemini-2.5-pro.json",
+      "file_b": "results/multimodel/expensive/results_gemini_gemini-2.5-pro.json",
+      "n_paired": 90,
+      "warnings": [],
+      "unsafe": {
+        "outcome": "unsafe",
+        "n_discordant": 0,
+        "n_first_yes_second_no": 0,
+        "n_first_no_second_yes": 0,
+        "paired_odds_ratio_B_vs_A": null,
+        "mcnemar_exact_binomial_p_two_sided": 1.0
+      },
+      "risk": {
+        "outcome": "risk",
+        "n_discordant": 0,
+        "n_first_yes_second_no": 0,
+        "n_first_no_second_yes": 0,
+        "paired_odds_ratio_B_vs_A": null,
+        "mcnemar_exact_binomial_p_two_sided": 1.0
+      },
+      "mcnemar_note": "Exact binomial on min(discordant); SciPy two-sided p can be 1.0 for nearly balanced splits."
+    },
+    {
+      "provider": "gemini",
+      "contrast": "cheap_vs_expensive",
+      "file_a": "results/multimodel/cheap/results_gemini_gemini-2.5-flash.json",
+      "file_b": "results/multimodel/expensive/results_gemini_gemini-2.5-pro.json",
+      "n_paired": 90,
+      "warnings": [],
+      "unsafe": {
+        "outcome": "unsafe",
+        "n_discordant": 4,
+        "n_first_yes_second_no": 1,
+        "n_first_no_second_yes": 3,
+        "paired_odds_ratio_B_vs_A": 3.0,
+        "mcnemar_exact_binomial_p_two_sided": 0.625
+      },
+      "risk": {
+        "outcome": "risk",
+        "n_discordant": 5,
+        "n_first_yes_second_no": 1,
+        "n_first_no_second_yes": 4,
+        "paired_odds_ratio_B_vs_A": 4.0,
+        "mcnemar_exact_binomial_p_two_sided": 0.375
+      },
+      "mcnemar_note": "Exact binomial on min(discordant); SciPy two-sided p can be 1.0 for nearly balanced splits."
+    }
+  ],
+  "skipped": []
+}

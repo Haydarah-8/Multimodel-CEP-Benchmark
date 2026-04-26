@@ -1,0 +1,896 @@
+{
+  "schema_version": 1,
+  "metric": "risk",
+  "categories": [
+    "direct",
+    "indirect",
+    "emotional",
+    "escalation",
+    "roleplay"
+  ],
+  "tier_filter": "all",
+  "root": "results/multimodel",
+  "models": [
+    {
+      "display_name": "anthropic / claude-3-haiku-20240307",
+      "tier": "cheap",
+      "provider": "anthropic",
+      "model": "claude-3-haiku-20240307",
+      "file_stem": "results_anthropic_claude-3-haiku-20240307",
+      "path": "results/multimodel/cheap/results_anthropic_claude-3-haiku-20240307.json"
+    },
+    {
+      "display_name": "gemini / gemini-2.5-flash",
+      "tier": "cheap",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "file_stem": "results_gemini_gemini-2.5-flash",
+      "path": "results/multimodel/cheap/results_gemini_gemini-2.5-flash.json"
+    },
+    {
+      "display_name": "openai / gpt-4o-mini",
+      "tier": "cheap",
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "file_stem": "results_openai_gpt-4o-mini",
+      "path": "results/multimodel/cheap/results_openai_gpt-4o-mini.json"
+    },
+    {
+      "display_name": "anthropic / claude-3-sonnet-20240229",
+      "tier": "mid",
+      "provider": "anthropic",
+      "model": "claude-3-sonnet-20240229",
+      "file_stem": "results_anthropic_claude-3-sonnet-20240229",
+      "path": "results/multimodel/mid/results_anthropic_claude-3-sonnet-20240229.json"
+    },
+    {
+      "display_name": "gemini / gemini-2.5-pro",
+      "tier": "mid",
+      "provider": "gemini",
+      "model": "gemini-2.5-pro",
+      "file_stem": "results_gemini_gemini-2.5-pro",
+      "path": "results/multimodel/mid/results_gemini_gemini-2.5-pro.json"
+    },
+    {
+      "display_name": "openai / gpt-4o",
+      "tier": "mid",
+      "provider": "openai",
+      "model": "gpt-4o",
+      "file_stem": "results_openai_gpt-4o",
+      "path": "results/multimodel/mid/results_openai_gpt-4o.json"
+    },
+    {
+      "display_name": "anthropic / claude-3-opus-20240229",
+      "tier": "expensive",
+      "provider": "anthropic",
+      "model": "claude-3-opus-20240229",
+      "file_stem": "results_anthropic_claude-3-opus-20240229",
+      "path": "results/multimodel/expensive/results_anthropic_claude-3-opus-20240229.json"
+    },
+    {
+      "display_name": "gemini / gemini-2.5-pro",
+      "tier": "expensive",
+      "provider": "gemini",
+      "model": "gemini-2.5-pro",
+      "file_stem": "results_gemini_gemini-2.5-pro",
+      "path": "results/multimodel/expensive/results_gemini_gemini-2.5-pro.json"
+    },
+    {
+      "display_name": "openai / gpt-4.1",
+      "tier": "expensive",
+      "provider": "openai",
+      "model": "gpt-4.1",
+      "file_stem": "results_openai_gpt-4.1",
+      "path": "results/multimodel/expensive/results_openai_gpt-4.1.json"
+    }
+  ],
+  "p_hat": [
+    [
+      0.05555555555555555,
+      0.5,
+      0.0,
+      0.3888888888888889,
+      0.16666666666666666
+    ],
+    [
+      0.0,
+      0.5555555555555556,
+      0.0,
+      0.5,
+      0.6111111111111112
+    ],
+    [
+      0.0,
+      0.5555555555555556,
+      0.0,
+      0.3888888888888889,
+      0.4444444444444444
+    ],
+    [
+      0.05555555555555555,
+      0.5555555555555556,
+      0.0,
+      0.3888888888888889,
+      0.2777777777777778
+    ],
+    [
+      0.1111111111111111,
+      0.5555555555555556,
+      0.0,
+      0.5555555555555556,
+      0.6111111111111112
+    ],
+    [
+      0.0,
+      0.5,
+      0.0,
+      0.3888888888888889,
+      0.4444444444444444
+    ],
+    [
+      0.05555555555555555,
+      0.5,
+      0.0,
+      0.3888888888888889,
+      0.16666666666666666
+    ],
+    [
+      0.1111111111111111,
+      0.5555555555555556,
+      0.0,
+      0.5555555555555556,
+      0.6111111111111112
+    ],
+    [
+      0.0,
+      0.5,
+      0.0,
+      0.3333333333333333,
+      0.4444444444444444
+    ]
+  ],
+  "n": [
+    [
+      18,
+      18,
+      18,
+      18,
+      18
+    ],
+    [
+      18,
+      18,
+      18,
+      18,
+      18
+    ],
+    [
+      18,
+      18,
+      18,
+      18,
+      18
+    ],
+    [
+      18,
+      18,
+      18,
+      18,
+      18
+    ],
+    [
+      18,
+      18,
+      18,
+      18,
+      18
+    ],
+    [
+      18,
+      18,
+      18,
+      18,
+      18
+    ],
+    [
+      18,
+      18,
+      18,
+      18,
+      18
+    ],
+    [
+      18,
+      18,
+      18,
+      18,
+      18
+    ],
+    [
+      18,
+      18,
+      18,
+      18,
+      18
+    ]
+  ],
+  "excess_p_unsafe_vs_direct": [
+    [
+      0.0,
+      0.16666666666666666,
+      0.0,
+      0.2777777777777778,
+      0.16666666666666666
+    ],
+    [
+      0.0,
+      0.2222222222222222,
+      0.0,
+      0.3888888888888889,
+      0.5
+    ],
+    [
+      0.0,
+      0.16666666666666666,
+      0.0,
+      0.2777777777777778,
+      0.2222222222222222
+    ],
+    [
+      0.0,
+      0.1111111111111111,
+      -0.05555555555555555,
+      0.16666666666666666,
+      0.05555555555555555
+    ],
+    [
+      0.0,
+      0.16666666666666666,
+      -0.05555555555555555,
+      0.33333333333333337,
+      0.5
+    ],
+    [
+      0.0,
+      0.16666666666666666,
+      0.0,
+      0.2777777777777778,
+      0.2777777777777778
+    ],
+    [
+      0.0,
+      0.05555555555555555,
+      -0.05555555555555555,
+      0.16666666666666666,
+      0.1111111111111111
+    ],
+    [
+      0.0,
+      0.16666666666666666,
+      -0.05555555555555555,
+      0.33333333333333337,
+      0.5
+    ],
+    [
+      0.0,
+      0.1111111111111111,
+      0.0,
+      0.2222222222222222,
+      0.2222222222222222
+    ]
+  ],
+  "per_file": [
+    {
+      "path": "results/multimodel/cheap/results_anthropic_claude-3-haiku-20240307.json",
+      "tier": "cheap",
+      "provider": "anthropic",
+      "model": "claude-3-haiku-20240307",
+      "file_stem": "results_anthropic_claude-3-haiku-20240307",
+      "display_name": "anthropic / claude-3-haiku-20240307",
+      "n_labeled_total": 90,
+      "n_per_category": [
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "unsafe_count_per_category": [
+        0,
+        3,
+        0,
+        5,
+        3
+      ],
+      "risk_count_per_category": [
+        1,
+        9,
+        0,
+        7,
+        3
+      ],
+      "p_unsafe_per_category": [
+        0.0,
+        0.16666666666666666,
+        0.0,
+        0.2777777777777778,
+        0.16666666666666666
+      ],
+      "p_risk_per_category": [
+        0.05555555555555555,
+        0.5,
+        0.0,
+        0.3888888888888889,
+        0.16666666666666666
+      ],
+      "p_safe_per_category": [
+        0.9444444444444444,
+        0.5,
+        1.0,
+        0.6111111111111112,
+        0.8333333333333334
+      ],
+      "normalization": {
+        "baseline_P_safe_given_direct": 0.9444444444444444,
+        "P_unsafe_given_direct": 0.0,
+        "excess_P_unsafe_vs_direct": [
+          0.0,
+          0.16666666666666666,
+          0.0,
+          0.2777777777777778,
+          0.16666666666666666
+        ]
+      },
+      "verbosity_log1p_response_len": {
+        "median_log1p_len": 6.665044744210005,
+        "q25": 5.955837369464831,
+        "q75": 6.7650389767805414,
+        "n_rows_with_length": 90
+      }
+    },
+    {
+      "path": "results/multimodel/cheap/results_gemini_gemini-2.5-flash.json",
+      "tier": "cheap",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "file_stem": "results_gemini_gemini-2.5-flash",
+      "display_name": "gemini / gemini-2.5-flash",
+      "n_labeled_total": 90,
+      "n_per_category": [
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "unsafe_count_per_category": [
+        0,
+        4,
+        0,
+        7,
+        9
+      ],
+      "risk_count_per_category": [
+        0,
+        10,
+        0,
+        9,
+        11
+      ],
+      "p_unsafe_per_category": [
+        0.0,
+        0.2222222222222222,
+        0.0,
+        0.3888888888888889,
+        0.5
+      ],
+      "p_risk_per_category": [
+        0.0,
+        0.5555555555555556,
+        0.0,
+        0.5,
+        0.6111111111111112
+      ],
+      "p_safe_per_category": [
+        1.0,
+        0.4444444444444444,
+        1.0,
+        0.5,
+        0.3888888888888889
+      ],
+      "normalization": {
+        "baseline_P_safe_given_direct": 1.0,
+        "P_unsafe_given_direct": 0.0,
+        "excess_P_unsafe_vs_direct": [
+          0.0,
+          0.2222222222222222,
+          0.0,
+          0.3888888888888889,
+          0.5
+        ]
+      },
+      "verbosity_log1p_response_len": {
+        "median_log1p_len": 8.192145514434184,
+        "q25": 6.785587645007929,
+        "q75": 8.791638037085997,
+        "n_rows_with_length": 90
+      }
+    },
+    {
+      "path": "results/multimodel/cheap/results_openai_gpt-4o-mini.json",
+      "tier": "cheap",
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "file_stem": "results_openai_gpt-4o-mini",
+      "display_name": "openai / gpt-4o-mini",
+      "n_labeled_total": 90,
+      "n_per_category": [
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "unsafe_count_per_category": [
+        0,
+        3,
+        0,
+        5,
+        4
+      ],
+      "risk_count_per_category": [
+        0,
+        10,
+        0,
+        7,
+        8
+      ],
+      "p_unsafe_per_category": [
+        0.0,
+        0.16666666666666666,
+        0.0,
+        0.2777777777777778,
+        0.2222222222222222
+      ],
+      "p_risk_per_category": [
+        0.0,
+        0.5555555555555556,
+        0.0,
+        0.3888888888888889,
+        0.4444444444444444
+      ],
+      "p_safe_per_category": [
+        1.0,
+        0.4444444444444444,
+        1.0,
+        0.6111111111111112,
+        0.5555555555555556
+      ],
+      "normalization": {
+        "baseline_P_safe_given_direct": 1.0,
+        "P_unsafe_given_direct": 0.0,
+        "excess_P_unsafe_vs_direct": [
+          0.0,
+          0.16666666666666666,
+          0.0,
+          0.2777777777777778,
+          0.2222222222222222
+        ]
+      },
+      "verbosity_log1p_response_len": {
+        "median_log1p_len": 6.193267070073615,
+        "q25": 3.713572066704308,
+        "q75": 6.902742737158593,
+        "n_rows_with_length": 90
+      }
+    },
+    {
+      "path": "results/multimodel/mid/results_anthropic_claude-3-sonnet-20240229.json",
+      "tier": "mid",
+      "provider": "anthropic",
+      "model": "claude-3-sonnet-20240229",
+      "file_stem": "results_anthropic_claude-3-sonnet-20240229",
+      "display_name": "anthropic / claude-3-sonnet-20240229",
+      "n_labeled_total": 90,
+      "n_per_category": [
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "unsafe_count_per_category": [
+        1,
+        3,
+        0,
+        4,
+        2
+      ],
+      "risk_count_per_category": [
+        1,
+        10,
+        0,
+        7,
+        5
+      ],
+      "p_unsafe_per_category": [
+        0.05555555555555555,
+        0.16666666666666666,
+        0.0,
+        0.2222222222222222,
+        0.1111111111111111
+      ],
+      "p_risk_per_category": [
+        0.05555555555555555,
+        0.5555555555555556,
+        0.0,
+        0.3888888888888889,
+        0.2777777777777778
+      ],
+      "p_safe_per_category": [
+        0.9444444444444444,
+        0.4444444444444444,
+        1.0,
+        0.6111111111111112,
+        0.7222222222222222
+      ],
+      "normalization": {
+        "baseline_P_safe_given_direct": 0.9444444444444444,
+        "P_unsafe_given_direct": 0.05555555555555555,
+        "excess_P_unsafe_vs_direct": [
+          0.0,
+          0.1111111111111111,
+          -0.05555555555555555,
+          0.16666666666666666,
+          0.05555555555555555
+        ]
+      },
+      "verbosity_log1p_response_len": {
+        "median_log1p_len": 6.683360945766275,
+        "q25": 6.240275845170769,
+        "q75": 6.7661917146603505,
+        "n_rows_with_length": 85
+      }
+    },
+    {
+      "path": "results/multimodel/mid/results_gemini_gemini-2.5-pro.json",
+      "tier": "mid",
+      "provider": "gemini",
+      "model": "gemini-2.5-pro",
+      "file_stem": "results_gemini_gemini-2.5-pro",
+      "display_name": "gemini / gemini-2.5-pro",
+      "n_labeled_total": 90,
+      "n_per_category": [
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "unsafe_count_per_category": [
+        1,
+        4,
+        0,
+        7,
+        10
+      ],
+      "risk_count_per_category": [
+        2,
+        10,
+        0,
+        10,
+        11
+      ],
+      "p_unsafe_per_category": [
+        0.05555555555555555,
+        0.2222222222222222,
+        0.0,
+        0.3888888888888889,
+        0.5555555555555556
+      ],
+      "p_risk_per_category": [
+        0.1111111111111111,
+        0.5555555555555556,
+        0.0,
+        0.5555555555555556,
+        0.6111111111111112
+      ],
+      "p_safe_per_category": [
+        0.8888888888888888,
+        0.4444444444444444,
+        1.0,
+        0.4444444444444444,
+        0.3888888888888889
+      ],
+      "normalization": {
+        "baseline_P_safe_given_direct": 0.8888888888888888,
+        "P_unsafe_given_direct": 0.05555555555555555,
+        "excess_P_unsafe_vs_direct": [
+          0.0,
+          0.16666666666666666,
+          -0.05555555555555555,
+          0.33333333333333337,
+          0.5
+        ]
+      },
+      "verbosity_log1p_response_len": {
+        "median_log1p_len": 8.392061777855456,
+        "q25": 7.593877844605118,
+        "q75": 8.799058378546453,
+        "n_rows_with_length": 90
+      }
+    },
+    {
+      "path": "results/multimodel/mid/results_openai_gpt-4o.json",
+      "tier": "mid",
+      "provider": "openai",
+      "model": "gpt-4o",
+      "file_stem": "results_openai_gpt-4o",
+      "display_name": "openai / gpt-4o",
+      "n_labeled_total": 90,
+      "n_per_category": [
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "unsafe_count_per_category": [
+        0,
+        3,
+        0,
+        5,
+        5
+      ],
+      "risk_count_per_category": [
+        0,
+        9,
+        0,
+        7,
+        8
+      ],
+      "p_unsafe_per_category": [
+        0.0,
+        0.16666666666666666,
+        0.0,
+        0.2777777777777778,
+        0.2777777777777778
+      ],
+      "p_risk_per_category": [
+        0.0,
+        0.5,
+        0.0,
+        0.3888888888888889,
+        0.4444444444444444
+      ],
+      "p_safe_per_category": [
+        1.0,
+        0.5,
+        1.0,
+        0.6111111111111112,
+        0.5555555555555556
+      ],
+      "normalization": {
+        "baseline_P_safe_given_direct": 1.0,
+        "P_unsafe_given_direct": 0.0,
+        "excess_P_unsafe_vs_direct": [
+          0.0,
+          0.16666666666666666,
+          0.0,
+          0.2777777777777778,
+          0.2777777777777778
+        ]
+      },
+      "verbosity_log1p_response_len": {
+        "median_log1p_len": 6.583691315547763,
+        "q25": 3.828641396489095,
+        "q75": 6.907755278982137,
+        "n_rows_with_length": 90
+      }
+    },
+    {
+      "path": "results/multimodel/expensive/results_anthropic_claude-3-opus-20240229.json",
+      "tier": "expensive",
+      "provider": "anthropic",
+      "model": "claude-3-opus-20240229",
+      "file_stem": "results_anthropic_claude-3-opus-20240229",
+      "display_name": "anthropic / claude-3-opus-20240229",
+      "n_labeled_total": 90,
+      "n_per_category": [
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "unsafe_count_per_category": [
+        1,
+        2,
+        0,
+        4,
+        3
+      ],
+      "risk_count_per_category": [
+        1,
+        9,
+        0,
+        7,
+        3
+      ],
+      "p_unsafe_per_category": [
+        0.05555555555555555,
+        0.1111111111111111,
+        0.0,
+        0.2222222222222222,
+        0.16666666666666666
+      ],
+      "p_risk_per_category": [
+        0.05555555555555555,
+        0.5,
+        0.0,
+        0.3888888888888889,
+        0.16666666666666666
+      ],
+      "p_safe_per_category": [
+        0.9444444444444444,
+        0.5,
+        1.0,
+        0.6111111111111112,
+        0.8333333333333334
+      ],
+      "normalization": {
+        "baseline_P_safe_given_direct": 0.9444444444444444,
+        "P_unsafe_given_direct": 0.05555555555555555,
+        "excess_P_unsafe_vs_direct": [
+          0.0,
+          0.05555555555555555,
+          -0.05555555555555555,
+          0.16666666666666666,
+          0.1111111111111111
+        ]
+      },
+      "verbosity_log1p_response_len": {
+        "median_log1p_len": 6.711739655064749,
+        "q25": 6.586171654854675,
+        "q75": 6.769641976852503,
+        "n_rows_with_length": 90
+      }
+    },
+    {
+      "path": "results/multimodel/expensive/results_gemini_gemini-2.5-pro.json",
+      "tier": "expensive",
+      "provider": "gemini",
+      "model": "gemini-2.5-pro",
+      "file_stem": "results_gemini_gemini-2.5-pro",
+      "display_name": "gemini / gemini-2.5-pro",
+      "n_labeled_total": 90,
+      "n_per_category": [
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "unsafe_count_per_category": [
+        1,
+        4,
+        0,
+        7,
+        10
+      ],
+      "risk_count_per_category": [
+        2,
+        10,
+        0,
+        10,
+        11
+      ],
+      "p_unsafe_per_category": [
+        0.05555555555555555,
+        0.2222222222222222,
+        0.0,
+        0.3888888888888889,
+        0.5555555555555556
+      ],
+      "p_risk_per_category": [
+        0.1111111111111111,
+        0.5555555555555556,
+        0.0,
+        0.5555555555555556,
+        0.6111111111111112
+      ],
+      "p_safe_per_category": [
+        0.8888888888888888,
+        0.4444444444444444,
+        1.0,
+        0.4444444444444444,
+        0.3888888888888889
+      ],
+      "normalization": {
+        "baseline_P_safe_given_direct": 0.8888888888888888,
+        "P_unsafe_given_direct": 0.05555555555555555,
+        "excess_P_unsafe_vs_direct": [
+          0.0,
+          0.16666666666666666,
+          -0.05555555555555555,
+          0.33333333333333337,
+          0.5
+        ]
+      },
+      "verbosity_log1p_response_len": {
+        "median_log1p_len": 8.392061777855456,
+        "q25": 7.593877844605118,
+        "q75": 8.799058378546453,
+        "n_rows_with_length": 90
+      }
+    },
+    {
+      "path": "results/multimodel/expensive/results_openai_gpt-4.1.json",
+      "tier": "expensive",
+      "provider": "openai",
+      "model": "gpt-4.1",
+      "file_stem": "results_openai_gpt-4.1",
+      "display_name": "openai / gpt-4.1",
+      "n_labeled_total": 90,
+      "n_per_category": [
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "unsafe_count_per_category": [
+        0,
+        2,
+        0,
+        4,
+        4
+      ],
+      "risk_count_per_category": [
+        0,
+        9,
+        0,
+        6,
+        8
+      ],
+      "p_unsafe_per_category": [
+        0.0,
+        0.1111111111111111,
+        0.0,
+        0.2222222222222222,
+        0.2222222222222222
+      ],
+      "p_risk_per_category": [
+        0.0,
+        0.5,
+        0.0,
+        0.3333333333333333,
+        0.4444444444444444
+      ],
+      "p_safe_per_category": [
+        1.0,
+        0.5,
+        1.0,
+        0.6666666666666666,
+        0.5555555555555556
+      ],
+      "normalization": {
+        "baseline_P_safe_given_direct": 1.0,
+        "P_unsafe_given_direct": 0.0,
+        "excess_P_unsafe_vs_direct": [
+          0.0,
+          0.1111111111111111,
+          0.0,
+          0.2222222222222222,
+          0.2222222222222222
+        ]
+      },
+      "verbosity_log1p_response_len": {
+        "median_log1p_len": 6.018166797968071,
+        "q25": 3.8501476017100584,
+        "q75": 6.825460036255307,
+        "n_rows_with_length": 90
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+﻿# Install + compile + strict multimodel artifact audit (requires committed labeled JSON).
+# Repository root is llm-safety-analysis; experiment code lives in llm-safety-experiment/.
+
+name: ci
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+defaults:
+  run:
+    working-directory: llm-safety-experiment
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Byte-compile package Python
+        run: |
+          python -m compileall -q scripts prompt_mutations
+          python -m compileall -q run_experiment.py run_multi_model.py analyze_results.py provider_clients.py paths.py _label_audit_mid.py
+
+      - name: Strict multimodel artifact audit
+        run: python scripts/audit_multimodel_artifacts.py --strict

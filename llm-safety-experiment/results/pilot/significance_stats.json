@@ -1,5 +1,5 @@
 {
-  "results_file": "C:\\Users\\Owner\\OneDrive\\Desktop\\llm-safety-analysis\\llm-safety-experiment\\results\\pilot\\results.json",
+  "results_file": "results/pilot/results.json",
   "n_rows": 90,
   "contingency_5x3": {
     "categories": [

@@ -3,7 +3,8 @@ Export a pre-specified subset of rows for dual coding / IRR (replication protoco
 
 Default rule (configurable):
   - Include 100% of rows where label is `unsafe`
-  - Include a random fraction of all other rows (default 0.20) with fixed seed
+  - Optionally include 100% of rows where label is `partial` (--include-all-partial; recommended for κ on the highest-variance band)
+  - Include a random fraction of remaining rows (default 0.20 of that pool) with fixed seed
 
 Outputs JSON list of row dicts (same schema as results.json). Second rater fills
 `label_rater2` in a copy or in a spreadsheet keyed by `id`; merge per RESULTS_SCHEMA.md.
@@ -11,6 +12,7 @@ Outputs JSON list of row dicts (same schema as results.json). Second rater fills
 Usage:
   python scripts/export_irr_subset.py
   python scripts/export_irr_subset.py --results results.json --out irr_subset_ids.json --fraction 0.2 --seed 42
+  python scripts/export_irr_subset.py --include-all-partial
 """
 
 from __future__ import annotations
@@ -35,9 +37,14 @@ def main() -> None:
         "--fraction",
         type=float,
         default=0.2,
-        help="Fraction of non-UNSAFE rows to include (0–1)",
+        help="With --include-all-partial: fraction of SAFE rows to sample. Otherwise: fraction of all non-UNSAFE rows (0–1).",
     )
     ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument(
+        "--include-all-partial",
+        action="store_true",
+        help="Include every PARTIAL row; random fraction applies only to SAFE-only remainder",
+    )
     args = ap.parse_args()
 
     if not args.results.is_file():
@@ -50,25 +57,51 @@ def main() -> None:
     with args.results.open(encoding="utf-8") as f:
         rows: list[dict] = json.load(f)
 
-    unsafe_rows = [r for r in rows if (r.get("label") or "").strip().lower() == "unsafe"]
-    other_rows = [r for r in rows if (r.get("label") or "").strip().lower() != "unsafe"]
+    def norm_label(r: dict) -> str:
+        return (r.get("label") or "").strip().lower()
+
+    unsafe_rows = [r for r in rows if norm_label(r) == "unsafe"]
+    partial_rows = [r for r in rows if norm_label(r) == "partial"]
+    safe_rows = [r for r in rows if norm_label(r) == "safe"]
 
     rng = random.Random(args.seed)
-    k = int(round(args.fraction * len(other_rows)))
-    sampled = rng.sample(other_rows, k=min(k, len(other_rows)))
+    if args.include_all_partial:
+        pool_for_fraction = safe_rows
+        protocol = "100% UNSAFE + 100% PARTIAL + random fraction of SAFE-only remainder"
+    else:
+        pool_for_fraction = [r for r in rows if norm_label(r) != "unsafe"]
+        protocol = "100% UNSAFE rows + random fraction of remainder"
 
-    subset = unsafe_rows + sampled
-    subset.sort(key=lambda r: (str(r.get("category", "")), int(r.get("id", 0) or 0)))
+    k = int(round(args.fraction * len(pool_for_fraction)))
+    sampled = rng.sample(pool_for_fraction, k=min(k, len(pool_for_fraction)))
+
+    if args.include_all_partial:
+        subset = unsafe_rows + partial_rows + sampled
+    else:
+        subset = unsafe_rows + sampled
+
+    # Deduplicate by prompt id (stable)
+    seen: set[object] = set()
+    deduped: list[dict] = []
+    for r in subset:
+        rid = r.get("id")
+        if rid in seen:
+            continue
+        seen.add(rid)
+        deduped.append(r)
+    deduped.sort(key=lambda r: (str(r.get("category", "")), int(r.get("id", 0) or 0)))
 
     payload = {
-        "protocol": "100% UNSAFE rows + random fraction of remainder",
-        "fraction_of_non_unsafe": args.fraction,
+        "protocol": protocol,
+        "include_all_partial": args.include_all_partial,
+        "fraction_applied_pool": args.fraction,
         "seed": args.seed,
         "n_total": len(rows),
         "n_unsafe_included": len(unsafe_rows),
-        "n_other_sampled": len(sampled),
-        "n_subset": len(subset),
-        "rows": subset,
+        "n_partial_included": len(partial_rows) if args.include_all_partial else 0,
+        "n_from_fraction_sample": len(sampled),
+        "n_subset": len(deduped),
+        "rows": deduped,
     }
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
@@ -76,7 +109,10 @@ def main() -> None:
         json.dump(payload, f, indent=2)
         f.write("\n")
 
-    print(f"Wrote {args.out} ({len(subset)} rows). Second rater: add label_rater2 per RESULTS_SCHEMA.md.")
+    print(
+        f"Wrote {args.out} ({len(deduped)} rows). Second rater: add label_rater2 per RESULTS_SCHEMA.md. "
+        "Then: python scripts/compute_irr_kappa.py --results <merged.json>"
+    )
 
 
 if __name__ == "__main__":
