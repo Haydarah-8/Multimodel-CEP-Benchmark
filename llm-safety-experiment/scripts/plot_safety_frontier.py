@@ -192,7 +192,7 @@ def main() -> None:
     )
     fig.tight_layout(rect=(0, 0.03, 1, 1))
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(args.out, dpi=160, facecolor=BG, edgecolor="none")
+    fig.savefig(args.out, dpi=220, facecolor=BG, edgecolor="none")
     plt.close(fig)
     print(f"Wrote {args.out} ({len(points)} models)", file=sys.stderr)
 

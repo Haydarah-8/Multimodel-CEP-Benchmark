@@ -1,7 +1,10 @@
-"""
+﻿"""
 Hierarchical clustering heatmap (models × categories) with dendrograms.
 
-Uses average linkage on Euclidean distance; scipy only (no seaborn).
+Uses average linkage on Euclidean distance; scipy + matplotlib only (no seaborn).
+
+Publication-oriented layout: generous margins, dedicated colorbar column (no overlap
+with heatmap labels), light neutral theme, readable typography.
 
 Descriptive; exploratory ordering only (n=9 runs).
 
@@ -18,7 +21,7 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.colors import LinearSegmentedColormap
+from matplotlib import colors as mcolors
 from matplotlib.gridspec import GridSpec
 from scipy.cluster.hierarchy import dendrogram, linkage, leaves_list
 from scipy.spatial.distance import pdist
@@ -26,32 +29,46 @@ from scipy.spatial.distance import pdist
 ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+SCRIPTS = Path(__file__).resolve().parent
+if str(SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS))
 
-BG = "#0d1117"
-FG = "#e6edf3"
-MUTED = "#8b949e"
-GRID = "#30363d"
+from academic_plot_style import DEFAULT_DPI  # noqa: E402
 
-CMAP = LinearSegmentedColormap.from_list(
-    "dark_ember",
-    [
-        "#12161c",
-        "#2a1a1c",
-        "#4e2a22",
-        "#6e3a26",
-        "#9a5230",
-    ],
+BG = "#fafbfc"
+FG = "#24292f"
+MUTED = "#656d76"
+GRID = "#d0d7de"
+DENDRO = "#57606a"
+
+CMAP = mcolors.LinearSegmentedColormap.from_list(
+    "rate_blues",
+    ["#f6f8fa", "#ddf4ff", "#54aeff", "#0969da", "#0550ae"],
     N=256,
 )
 
 
 def short_row_label(m: dict) -> str:
-    t = str(m.get("tier", ""))[:1]
-    p = str(m.get("provider", ""))[:3]
-    mod = str(m.get("model", ""))
-    if len(mod) > 18:
-        mod = mod[:16] + "…"
-    return f"{t}:{p}:{mod}"
+    tier = str(m.get("tier", "")).strip()
+    prov = str(m.get("provider", "")).strip()
+    mod = str(m.get("model", "")).strip()
+    tier_s = {"cheap": "C", "mid": "M", "expensive": "E"}.get(tier.lower(), tier[:1].upper() or "?")
+    prov_s = {"openai": "OAI", "anthropic": "Ant", "gemini": "Gem"}.get(prov.lower(), prov[:4])
+    if len(mod) > 24:
+        mod = mod[:22] + "…"
+    return f"{tier_s}:{prov_s} · {mod}"
+
+
+def _align_col_dendrogram(ax_top: plt.Axes, n_cols: int) -> None:
+    ax_top.set_xlim(-0.5, n_cols - 0.5)
+    ax_top.set_ylim(0.0, None)
+    ax_top.invert_yaxis()
+
+
+def _align_row_dendrogram(ax_left: plt.Axes, n_rows: int) -> None:
+    ax_left.set_ylim(-0.5, n_rows - 0.5)
+    ax_left.set_xlim(None, 0.0)
+    ax_left.invert_xaxis()
 
 
 def main() -> None:
@@ -62,7 +79,7 @@ def main() -> None:
         type=Path,
         default=ROOT / "figures" / "multimodel" / "combined_clustermap_rates.png",
     )
-    ap.add_argument("--dpi", type=int, default=180)
+    ap.add_argument("--dpi", type=int, default=DEFAULT_DPI)
     args = ap.parse_args()
 
     if not args.matrix_json.is_file():
@@ -91,25 +108,32 @@ def main() -> None:
     row_labs = [short_row_label(models[i]) for i in row_order]
     col_labs = [cats[j] for j in col_order]
 
-    fig = plt.figure(figsize=(11.5, 8.8))
-    fig.patch.set_facecolor(BG)
+    n_r, n_c = mat_ord.shape
+
+    fig = plt.figure(figsize=(15.0, 10.0), facecolor=BG)
     gs = GridSpec(
         2,
-        2,
-        width_ratios=[0.28, 1],
-        height_ratios=[0.32, 1],
-        wspace=0.07,
-        hspace=0.07,
-        left=0.07,
-        right=0.88,
-        top=0.92,
+        3,
+        width_ratios=[0.38, 1.0, 0.055],
+        height_ratios=[0.42, 1.0],
+        wspace=0.28,
+        hspace=0.30,
+        left=0.06,
+        right=0.97,
+        top=0.90,
         bottom=0.14,
     )
+
     ax_corner = fig.add_subplot(gs[0, 0])
     ax_corner.axis("off")
+
     ax_top = fig.add_subplot(gs[0, 1])
     ax_left = fig.add_subplot(gs[1, 0])
     ax_heat = fig.add_subplot(gs[1, 1])
+    cax = fig.add_subplot(gs[1, 2])
+
+    ax_pad = fig.add_subplot(gs[0, 2])
+    ax_pad.axis("off")
 
     for ax in (ax_top, ax_left, ax_heat):
         ax.set_facecolor(BG)
@@ -117,25 +141,29 @@ def main() -> None:
     dendrogram(
         col_link,
         ax=ax_top,
-        above_threshold_color=MUTED,
+        above_threshold_color=DENDRO,
         color_threshold=0,
-    )
+        distance_sort="descending")
     ax_top.set_xticks([])
     ax_top.set_yticks([])
+    ax_top.tick_params(colors=MUTED, labelsize=9)
     for spine in ax_top.spines.values():
         spine.set_visible(False)
+    _align_col_dendrogram(ax_top, n_c)
 
     dendrogram(
         row_link,
         ax=ax_left,
         orientation="left",
-        above_threshold_color=MUTED,
+        above_threshold_color=DENDRO,
         color_threshold=0,
-    )
+        distance_sort="descending")
     ax_left.set_xticks([])
     ax_left.set_yticks([])
+    ax_left.tick_params(colors=MUTED, labelsize=9)
     for spine in ax_left.spines.values():
         spine.set_visible(False)
+    _align_row_dendrogram(ax_left, n_r)
 
     im = ax_heat.imshow(
         mat_ord,
@@ -144,42 +172,72 @@ def main() -> None:
         vmin=0,
         vmax=1,
         interpolation="nearest",
+        extent=(-0.5, n_c - 0.5, n_r - 0.5, -0.5),
     )
-    ax_heat.set_xticks(np.arange(len(col_labs)))
-    ax_heat.set_xticklabels(col_labs, rotation=35, ha="right", fontsize=10, color=FG)
-    ax_heat.set_yticks(np.arange(len(row_labs)))
-    ax_heat.set_yticklabels(row_labs, fontsize=8, color=FG)
-    ax_heat.set_xlabel("Category", color=FG, fontsize=10)
-    ax_heat.set_ylabel("Model run", color=FG, fontsize=10)
+    ax_heat.set_xticks(np.arange(n_c))
+    ax_heat.set_xticklabels(
+        col_labs,
+        rotation=40,
+        ha="right",
+        fontsize=10,
+        color=FG,
+    )
+    ax_heat.set_yticks(np.arange(n_r))
+    ax_heat.set_yticklabels(row_labs, fontsize=9.5, color=FG)
+    ax_heat.set_xlabel("Elicitation category (cluster order)", color=FG, fontsize=11, labelpad=10)
+    ax_heat.set_ylabel("Model run (cluster order)", color=FG, fontsize=11, labelpad=10)
     for spine in ax_heat.spines.values():
         spine.set_color(GRID)
+        spine.set_linewidth(0.8)
 
-    cbar = fig.colorbar(im, ax=ax_heat, fraction=0.035, pad=0.04)
-    cbar.ax.yaxis.set_tick_params(colors=FG)
-    plt.setp(cbar.ax.get_yticklabels(), color=FG)
-    cbar.set_label(r"$\hat p$" + f" ({metric})", color=FG, fontsize=9)
+    ax_heat.tick_params(axis="both", colors=MUTED, length=0)
+    ax_heat.set_xlim(-0.5, n_c - 0.5)
+    ax_heat.set_ylim(n_r - 0.5, -0.5)
+
+    cbar = fig.colorbar(im, cax=cax)
+    cbar.ax.set_facecolor(BG)
+    cbar.ax.yaxis.set_tick_params(colors=FG, labelsize=10)
+    cbar.outline.set_edgecolor(GRID)
+    cbar.set_label(r"Estimated rate $\hat{p}$" + f" ({metric})", color=FG, fontsize=10.5, labelpad=12)
 
     fig.suptitle(
-        f"Clustermap: {metric} rates (average linkage, Euclidean)",
+        "Hierarchical clustering of multimodel rates",
         color=FG,
-        fontsize=12,
+        fontsize=14,
         fontweight="600",
-        y=0.97,
+        y=0.96,
     )
     fig.text(
         0.5,
-        0.06,
-        "Nine runs; n=18/cell; Gemini mid/expensive same model id; dendrogram order is exploratory.",
+        0.935,
+        "Rows and columns reordered by average linkage on Euclidean distance | exploratory only",
         ha="center",
-        fontsize=8,
+        fontsize=10,
+        color=MUTED,
+    )
+    fig.text(
+        0.5,
+        0.055,
+        "Nine API configurations; fixed bank; rates are benchmark-conditional. "
+        "Dendrogram topology is not a statistical test. See companion .md for interpretation.",
+        ha="center",
+        fontsize=9,
         color=MUTED,
     )
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(args.out, dpi=args.dpi, facecolor=BG, edgecolor="none")
+    fig.savefig(
+        args.out,
+        dpi=args.dpi,
+        facecolor=BG,
+        edgecolor="none",
+        bbox_inches="tight",
+        pad_inches=0.22,
+    )
     plt.close(fig)
     print(f"Wrote {args.out}", file=sys.stderr)
 
 
 if __name__ == "__main__":
     main()
+

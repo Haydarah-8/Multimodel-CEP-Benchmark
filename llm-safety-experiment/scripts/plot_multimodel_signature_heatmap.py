@@ -23,10 +23,16 @@ from matplotlib.colors import LinearSegmentedColormap
 ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+SCRIPTS = Path(__file__).resolve().parent
+if str(SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS))
+
+from academic_plot_style import DEFAULT_DPI  # noqa: E402
+
 
 BG = "#0d1117"
-FG = "#e6edf3"
-MUTED = "#8b949e"
+FG = "#f0f3f6"
+MUTED = "#9aa7b5"
 GRID = "#30363d"
 CBAR_EDGE = "#484f58"
 
@@ -85,7 +91,7 @@ def main() -> None:
         type=Path,
         default=None,
     )
-    ap.add_argument("--dpi", type=int, default=180, help="PNG resolution")
+    ap.add_argument("--dpi", type=int, default=DEFAULT_DPI, help="PNG resolution")
     args = ap.parse_args()
 
     if not args.matrix_json.is_file():
@@ -143,13 +149,13 @@ def main() -> None:
             "text.color": FG,
             "xtick.color": FG,
             "ytick.color": FG,
-            "font.size": 10,
+            "font.size": 11,
         }
     )
 
     n_rows, n_cols = mat.shape[0], mat.shape[1]
-    fig_w = max(9.0, n_cols * 1.35)
-    fig_h = max(6.0, n_rows * 0.52 + 1.2)
+    fig_w = max(10.0, n_cols * 1.45)
+    fig_h = max(6.5, n_rows * 0.58 + 1.35)
     fig, ax = plt.subplots(figsize=(fig_w, fig_h))
     fig.patch.set_facecolor(BG)
     masked = np.ma.masked_where(~np.isfinite(mat), mat)
@@ -157,22 +163,22 @@ def main() -> None:
 
     ax.set_xticks(np.arange(n_cols))
     ax.set_yticks(np.arange(n_rows))
-    ax.set_xticklabels(cats, rotation=40, ha="right", fontsize=10)
-    ax.set_yticklabels(row_labels, fontsize=9)
-    ax.set_xlabel("Elicitation category", color=FG, fontsize=10, labelpad=8)
-    ax.set_ylabel("Model (tier)", color=FG, fontsize=10, labelpad=6)
+    ax.set_xticklabels(cats, rotation=40, ha="right", fontsize=10.5)
+    ax.set_yticklabels(row_labels, fontsize=10)
+    ax.set_xlabel("Elicitation category", color=FG, fontsize=11, labelpad=10)
+    ax.set_ylabel("Model (tier)", color=FG, fontsize=11, labelpad=8)
 
     ax.set_xticks(np.arange(-0.5, n_cols, 1), minor=True)
     ax.set_yticks(np.arange(-0.5, n_rows, 1), minor=True)
     ax.grid(which="minor", color=GRID, linestyle="-", linewidth=1.1)
     ax.tick_params(which="minor", bottom=False, left=False)
 
-    ax.set_title(title, color=FG, fontsize=13, fontweight="600", pad=14)
-    fig.text(0.5, 0.96, subtitle, ha="center", va="top", color=MUTED, fontsize=8.5, transform=fig.transFigure)
+    ax.set_title(title, color=FG, fontsize=14, fontweight="600", pad=16)
+    fig.text(0.5, 0.965, subtitle, ha="center", va="top", color=MUTED, fontsize=10, transform=fig.transFigure)
 
     cbar = fig.colorbar(im, ax=ax, fraction=0.035, pad=0.02)
-    cbar.ax.yaxis.set_tick_params(color=FG, labelsize=9)
-    cbar.set_label(cbar_label, color=FG, fontsize=9)
+    cbar.ax.yaxis.set_tick_params(color=FG, labelsize=10)
+    cbar.set_label(cbar_label, color=FG, fontsize=10.5)
     cbar.outline.set_edgecolor(CBAR_EDGE)
     cbar.outline.set_linewidth(0.8)
     plt.setp(cbar.ax.get_yticklabels(), color=FG)
@@ -193,11 +199,11 @@ def main() -> None:
                 txt = f"{100.0 * val:+.1f}pt"
                 tcol = "#f0f3f6"
                 effects = _text_outline()
-            t = ax.text(j, i, txt, ha="center", va="center", color=tcol, fontsize=9, fontweight="500")
+            t = ax.text(j, i, txt, ha="center", va="center", color=tcol, fontsize=10, fontweight="500")
             if effects:
                 t.set_path_effects(effects)
 
-    plt.subplots_adjust(top=0.88, bottom=0.14, left=0.28, right=0.92)
+    plt.subplots_adjust(top=0.87, bottom=0.15, left=0.30, right=0.91)
     out = args.out
     if out is None:
         suffix = (
@@ -207,7 +213,7 @@ def main() -> None:
         )
         out = ROOT / "figures" / "multimodel" / f"signature_{suffix}.png"
     out.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(out, dpi=args.dpi, facecolor=BG, edgecolor="none")
+    fig.savefig(out, dpi=args.dpi, facecolor=BG, edgecolor="none", bbox_inches="tight", pad_inches=0.14)
     plt.close(fig)
     print(f"Wrote {out}", file=sys.stderr)
 

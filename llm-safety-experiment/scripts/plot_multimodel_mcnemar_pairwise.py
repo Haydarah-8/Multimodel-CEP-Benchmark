@@ -26,7 +26,7 @@ for p in (ROOT, SCRIPTS):
     if str(p) not in sys.path:
         sys.path.insert(0, str(p))
 
-from academic_plot_style import ACCENT, apply_academic_style  # noqa: E402
+from academic_plot_style import ACCENT, DEFAULT_DPI, apply_academic_style  # noqa: E402
 from paths import MULTIMODEL_DIR  # noqa: E402
 
 VALID = frozenset({"safe", "partial", "unsafe"})
@@ -89,7 +89,7 @@ def main() -> None:
         default="unsafe",
         help="Binary outcome: strict UNSAFE vs risk (PARTIAL∪UNSAFE)",
     )
-    ap.add_argument("--dpi", type=int, default=220)
+    ap.add_argument("--dpi", type=int, default=DEFAULT_DPI)
     args = ap.parse_args()
 
     files = sorted(args.root.rglob("results_*.json"))

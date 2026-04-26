@@ -117,7 +117,7 @@ def main() -> None:
     fig.tight_layout()
     out = args.out or (args.fingerprint_json.parent / "fig_model_fingerprint_curves.png")
     out.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(out, dpi=160, facecolor=BG, edgecolor="none")
+    fig.savefig(out, dpi=220, facecolor=BG, edgecolor="none")
     plt.close(fig)
     print(f"Wrote {out}", file=sys.stderr)
 

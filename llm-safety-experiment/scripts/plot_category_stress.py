@@ -99,7 +99,7 @@ def main() -> None:
     fig.tight_layout()
     fig.subplots_adjust(bottom=0.18)
     out.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(out, dpi=160, facecolor=BG, edgecolor="none")
+    fig.savefig(out, dpi=220, facecolor=BG, edgecolor="none")
     plt.close(fig)
     print(f"Wrote {out}")
 

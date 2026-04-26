@@ -31,11 +31,12 @@ if str(ROOT) not in sys.path:
 if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
+from academic_plot_style import DEFAULT_DPI  # noqa: E402
 from stats_utils import wilson_proportion_ci  # noqa: E402
 
 BG = "#0d1117"
-FG = "#e6edf3"
-MUTED = "#8b949e"
+FG = "#f0f3f6"
+MUTED = "#9aa7b5"
 GRID = "#30363d"
 # Muted rust scale (non-neon); zero counts use cool gray bars.
 BAR_POS = "#7a3d2e"
@@ -65,7 +66,7 @@ def main() -> None:
         action="store_true",
         help="Omit Wilson 95% CI error bars",
     )
-    ap.add_argument("--dpi", type=int, default=190)
+    ap.add_argument("--dpi", type=int, default=DEFAULT_DPI)
     args = ap.parse_args()
 
     if not args.matrix_json.is_file():
@@ -107,9 +108,9 @@ def main() -> None:
     fig, axes = plt.subplots(
         3,
         3,
-        figsize=(15.2, 10.8),
+        figsize=(16.5, 11.8),
         sharey=True,
-        gridspec_kw={"wspace": 0.22, "hspace": 0.38},
+        gridspec_kw={"wspace": 0.24, "hspace": 0.42},
     )
     fig.patch.set_facecolor(BG)
     x = np.arange(len(cats))
@@ -165,19 +166,19 @@ def main() -> None:
 
             ax.set_ylim(0, 1.0)
             ax.set_yticks([0, 0.25, 0.5, 0.75, 1.0])
-            ax.set_yticklabels(["0", "", "0.5", "", "1"], fontsize=8)
-            ax.grid(axis="y", alpha=0.35, linestyle="-", linewidth=0.7)
+            ax.set_yticklabels(["0", "", "0.5", "", "1"], fontsize=10)
+            ax.grid(axis="y", alpha=0.4, linestyle="-", linewidth=0.7)
             ax.set_axisbelow(True)
             if ri == 2:
                 ax.set_xticks(x)
-                ax.set_xticklabels(cats, rotation=40, ha="right", fontsize=8)
+                ax.set_xticklabels(cats, rotation=40, ha="right", fontsize=10)
             else:
                 ax.set_xticks(x)
                 ax.set_xticklabels([])
             m = models[idx]
             n_cat = ns[0] if ns and all(n == ns[0] for n in ns) else 18
             title = f"{m.get('model', '?')}\n({n_cat} prompts/category)"
-            ax.set_title(title, fontsize=8, color=FG, pad=6)
+            ax.set_title(title, fontsize=10, color=FG, pad=6)
 
     for ci, prov in enumerate(PROV_ORDER):
         axes[0][ci].text(
@@ -186,19 +187,19 @@ def main() -> None:
             prov.upper(),
             transform=axes[0][ci].transAxes,
             ha="center",
-            fontsize=11,
+            fontsize=12,
             color=FG,
             fontweight="bold",
         )
     for ri, tier in enumerate(TIER_ORDER):
         axes[ri][0].text(
-            -0.42,
+            -0.44,
             0.5,
             tier.upper(),
             transform=axes[ri][0].transAxes,
             va="center",
             ha="right",
-            fontsize=11,
+            fontsize=12,
             color=FG,
             fontweight="bold",
             rotation=90,
@@ -207,18 +208,18 @@ def main() -> None:
     fig.suptitle(
         r"$\hat P(\mathrm{unsafe}\mid c)$ by category — nine tiered API runs (3×3 design)",
         color=FG,
-        fontsize=12,
+        fontsize=14,
         fontweight="600",
-        y=0.985,
+        y=0.988,
     )
     fig.text(
         0.5,
-        0.945,
+        0.938,
         "Gemini mid & expensive: model id gemini-2.5-pro (two labeled runs). Bars: Wilson 95% CI when shown."
         if use_ci
         else "Gemini mid & expensive: model id gemini-2.5-pro (two labeled runs).",
         ha="center",
-        fontsize=9,
+        fontsize=10.5,
         color=MUTED,
     )
 
@@ -239,17 +240,24 @@ def main() -> None:
         framealpha=0.94,
         facecolor="#161b22",
         edgecolor=GRID,
-        fontsize=9,
-        bbox_to_anchor=(0.5, -0.02),
+        fontsize=10.5,
+        bbox_to_anchor=(0.5, -0.03),
     )
     for t in leg.get_texts():
         t.set_color(FG)
 
-    fig.supylabel(r"$\hat P(\mathrm{unsafe})$", color=FG, fontsize=11, x=0.04)
-    plt.subplots_adjust(left=0.09, right=0.98, top=0.89, bottom=0.12)
+    fig.supylabel(r"$\hat P(\mathrm{unsafe})$", color=FG, fontsize=12, x=0.045)
+    plt.subplots_adjust(left=0.10, right=0.98, top=0.88, bottom=0.14)
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(args.out, dpi=args.dpi, facecolor=BG, edgecolor="none")
+    fig.savefig(
+        args.out,
+        dpi=args.dpi,
+        facecolor=BG,
+        edgecolor="none",
+        bbox_inches="tight",
+        pad_inches=0.16,
+    )
     plt.close(fig)
     print(f"Wrote {args.out}", file=sys.stderr)
 

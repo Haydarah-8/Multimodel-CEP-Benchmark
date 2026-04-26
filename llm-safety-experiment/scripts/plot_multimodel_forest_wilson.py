@@ -25,6 +25,9 @@ if str(ROOT) not in sys.path:
 if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
+from academic_plot_style import DEFAULT_DPI  # noqa: E402
+
+
 from stats_utils import wilson_proportion_ci  # noqa: E402
 
 BG = "#0d1117"
@@ -55,7 +58,7 @@ def main() -> None:
         type=Path,
         default=None,
     )
-    ap.add_argument("--dpi", type=int, default=180)
+    ap.add_argument("--dpi", type=int, default=DEFAULT_DPI)
     args = ap.parse_args()
 
     if not args.matrix_json.is_file():

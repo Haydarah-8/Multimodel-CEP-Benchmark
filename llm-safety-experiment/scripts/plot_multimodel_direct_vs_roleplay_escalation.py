@@ -23,7 +23,7 @@ for p in (ROOT, SCRIPTS):
     if str(p) not in sys.path:
         sys.path.insert(0, str(p))
 
-from academic_plot_style import ACCENT, apply_academic_style  # noqa: E402
+from academic_plot_style import ACCENT, DEFAULT_DPI, apply_academic_style  # noqa: E402
 
 PROV_COL = {
     "openai": ACCENT["blue"],
@@ -40,7 +40,7 @@ def main() -> None:
         type=Path,
         default=ROOT / "figures" / "multimodel" / "phd_direct_vs_roleplay_escalation.png",
     )
-    ap.add_argument("--dpi", type=int, default=220)
+    ap.add_argument("--dpi", type=int, default=DEFAULT_DPI)
     args = ap.parse_args()
 
     if not args.matrix_json.is_file():

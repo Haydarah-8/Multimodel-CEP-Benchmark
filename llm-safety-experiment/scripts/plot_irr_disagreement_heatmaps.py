@@ -163,7 +163,7 @@ def main() -> None:
     fig.tight_layout()
     out = args.out or (ROOT / "figures" / "multimodel" / "irr_disagreement_panels.png")
     out.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(out, dpi=160, facecolor=BG, edgecolor="none")
+    fig.savefig(out, dpi=220, facecolor=BG, edgecolor="none")
     plt.close(fig)
     print(f"Wrote {out}", file=sys.stderr)
 
@@ -188,7 +188,7 @@ def main() -> None:
         fig2.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
         fig2.tight_layout()
         cond_out.parent.mkdir(parents=True, exist_ok=True)
-        fig2.savefig(cond_out, dpi=160, facecolor=BG, edgecolor="none")
+        fig2.savefig(cond_out, dpi=220, facecolor=BG, edgecolor="none")
         plt.close(fig2)
         print(f"Wrote {cond_out}", file=sys.stderr)
 

@@ -214,7 +214,7 @@ def main() -> None:
     ax.legend(handles=handles, loc="best", framealpha=0.2, fontsize=8)
     fig.tight_layout()
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(args.out, dpi=160, facecolor=BG, edgecolor="none")
+    fig.savefig(args.out, dpi=220, facecolor=BG, edgecolor="none")
     plt.close(fig)
     print(f"Wrote {args.out}", file=sys.stderr)
 

@@ -18,6 +18,12 @@ import numpy as np
 ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+SCRIPTS = Path(__file__).resolve().parent
+if str(SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS))
+
+from academic_plot_style import DEFAULT_DPI  # noqa: E402
+
 
 from paths import MULTIMODEL_DIR  # noqa: E402
 
@@ -69,7 +75,7 @@ def main() -> None:
         type=Path,
         default=ROOT / "figures" / "multimodel" / "combined_label_composition_stacked.png",
     )
-    ap.add_argument("--dpi", type=int, default=180)
+    ap.add_argument("--dpi", type=int, default=DEFAULT_DPI)
     args = ap.parse_args()
 
     files = discover(args.root)

@@ -183,7 +183,7 @@ def main() -> None:
 
     fig.subplots_adjust(left=0.08, right=0.98, top=0.92, bottom=0.18, wspace=0.25)
     args.out_png.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(args.out_png, dpi=160, facecolor=BG, edgecolor="none")
+    fig.savefig(args.out_png, dpi=220, facecolor=BG, edgecolor="none")
     plt.close(fig)
     print(f"Wrote {args.out_png} (mode={mode})", file=sys.stderr)
 

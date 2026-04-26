@@ -21,6 +21,12 @@ from matplotlib.colors import LinearSegmentedColormap
 ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+SCRIPTS = Path(__file__).resolve().parent
+if str(SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS))
+
+from academic_plot_style import DEFAULT_DPI  # noqa: E402
+
 
 BG = "#0d1117"
 FG = "#e6edf3"
@@ -48,7 +54,7 @@ def main() -> None:
         type=Path,
         default=ROOT / "figures" / "multimodel" / "combined_category_correlation_across_models.png",
     )
-    ap.add_argument("--dpi", type=int, default=180)
+    ap.add_argument("--dpi", type=int, default=DEFAULT_DPI)
     args = ap.parse_args()
 
     if not args.matrix_json.is_file():
