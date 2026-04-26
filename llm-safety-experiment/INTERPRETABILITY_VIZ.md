@@ -1,4 +1,4 @@
-# Interpretability visualizations (Tier 3)
+# Interpretability visualizations
 
 Three figures help readers compare **models** and **elicitation categories** at a glance. They are **descriptive**; do not treat PCA axes, dendrogram merges, or convex hulls as causal or normative claims.
 
