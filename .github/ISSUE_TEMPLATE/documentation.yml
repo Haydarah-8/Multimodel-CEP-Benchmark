@@ -1,0 +1,52 @@
+name: Documentation
+description: Improve README, monograph, provenance, figure companions, or cross-links.
+title: "[Docs]: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Prefer pointing to **exact files** and **sections** so maintainers can patch quickly.
+        For **research methodology** debate, note whether you want a doc change only or a tracked design change.
+
+  - type: textarea
+    id: location
+    attributes:
+      label: File(s) and section
+      description: e.g. `README.md` §4, `llm-safety-experiment/docs/RESEARCH_MONOGRAPH.md` §2.1
+    validations:
+      required: true
+
+  - type: dropdown
+    id: audience
+    attributes:
+      label: Primary audience
+      options:
+        - Paper / thesis reader
+        - Practitioner / engineer replicating runs
+        - Reviewer / auditor
+        - Student / educator
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong or missing?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change (optional)
+      description: Wording, structure, or a PR sketch.
+
+  - type: checkboxes
+    id: pr
+    attributes:
+      label: Contribution
+      options:
+        - label: I can open a PR for this
+          required: false

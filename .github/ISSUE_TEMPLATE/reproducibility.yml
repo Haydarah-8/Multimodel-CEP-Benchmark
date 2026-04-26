@@ -1,0 +1,68 @@
+name: Reproducibility / artifact
+description: Figures, tables, or statistics do not match committed JSON or documented commands.
+title: "[Repro]: "
+labels: ["reproducibility"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This template is for **frozen artifact** mismatches: hashes, audit failures, or figure regeneration drift.
+        For **runtime crashes**, use **Bug report**.
+
+  - type: textarea
+    id: target
+    attributes:
+      label: Output that diverges
+      description: Path to figure, table, or script output; e.g. `figures/multimodel/combined_clustermap_rates.png`
+    validations:
+      required: true
+
+  - type: textarea
+    id: commands
+    attributes:
+      label: Commands you ran
+      description: From `llm-safety-experiment/` unless noted. Include flags.
+    validations:
+      required: true
+
+  - type: textarea
+    id: commit
+    attributes:
+      label: Git state
+      description: `git rev-parse HEAD` and whether the working tree was clean.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: audit
+    attributes:
+      label: Result of `python scripts/audit_multimodel_artifacts.py --strict`
+      options:
+        - Passes
+        - Fails — paste output below
+        - Not applicable (pilot-only / no multimodel JSON touched)
+        - Did not run yet
+    validations:
+      required: true
+
+  - type: textarea
+    id: audit_log
+    attributes:
+      label: Audit stderr / stdout (if failed)
+      render: shell
+
+  - type: textarea
+    id: diff
+    attributes:
+      label: What you observed
+      description: e.g. checksum mismatch, wrong cell in heatmap, CI red on main.
+
+  - type: checkboxes
+    id: json
+    attributes:
+      label: Context
+      options:
+        - label: I changed `results/**/*.json` intentionally
+          required: false
+        - label: I only changed plotting scripts
+          required: false

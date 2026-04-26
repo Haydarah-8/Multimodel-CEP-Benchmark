@@ -1,0 +1,59 @@
+name: Feature / extension
+description: Propose a new analysis, plot, or workflow—within benchmark scope and ethics.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Extensions should preserve **estimand clarity** (fixed bank, rubric versioning) unless maintainers agree to a **migrated** benchmark version.
+        See [CONTRIBUTING.md](https://github.com/Haydarah-8/Multimodel-CEP-Benchmark/blob/main/CONTRIBUTING.md) and [README.md](https://github.com/Haydarah-8/Multimodel-CEP-Benchmark/blob/main/README.md) for scope.
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: What research or replication gap does this address?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: API shape, new script, new figure, config flag, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Alignment with benchmark scope
+      description: Does this assume the same prompt bank and label schema? Any new data requirements?
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks and ethics
+      description: Dual-use concerns, extra API cost, reviewer confusion, breaking strict audit.
+
+  - type: dropdown
+    id: breaking
+    attributes:
+      label: Breaking change to frozen artifacts?
+      options:
+        - "No — additive only"
+        - "Maybe — needs migration plan"
+        - "Yes — major version / rubric change"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: willing
+    attributes:
+      label: Implementation
+      options:
+        - label: I can implement and include audit / reproduce steps
+          required: false

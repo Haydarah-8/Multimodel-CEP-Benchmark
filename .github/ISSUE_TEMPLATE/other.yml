@@ -1,0 +1,23 @@
+name: Question / other
+description: When none of the other templates fit (still use Security link for secrets).
+title: "[Other]: "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For **security** or **accidental secret commits**, do **not** use this form—use the **Security** contact link on the chooser.
+
+  - type: textarea
+    id: topic
+    attributes:
+      label: Topic
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+    validations:
+      required: true

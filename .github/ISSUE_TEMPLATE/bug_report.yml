@@ -1,0 +1,85 @@
+name: Bug report
+description: Something is broken in scripts, docs links, CI, or tooling.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Scope:** executable code, documentation errors that block replication, or CI failures.
+        For **wrong numbers** in a figure, use **Reproducibility / artifact** if the cause is data or audit-related.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: One or two sentences.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Include the full error message or traceback when applicable.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      description: Exact commands from repo root or `llm-safety-experiment/`, and inputs if any.
+      placeholder: |
+        cd llm-safety-experiment
+        python scripts/...
+    validations:
+      required: true
+
+  - type: input
+    id: commit
+    attributes:
+      label: Commit SHA (optional)
+      description: Output of `git rev-parse HEAD` for the clone you used.
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: OS
+      options:
+        - Linux
+        - macOS
+        - Windows
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: python
+    attributes:
+      label: Python version
+      description: e.g. 3.12.2 (`python --version`)
+
+  - type: checkboxes
+    id: json_changed
+    attributes:
+      label: Local state
+      options:
+        - label: I modified committed `results/**/*.json` locally
+          required: false
+        - label: I ran `python scripts/audit_multimodel_artifacts.py --strict` and it failed
+          required: false
+
+  - type: textarea
+    id: audit
+    attributes:
+      label: Audit output (if relevant)
+      description: Paste relevant lines if the bug involves multimodel artifacts.
+      render: shell

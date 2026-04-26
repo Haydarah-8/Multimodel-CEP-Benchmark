@@ -314,7 +314,8 @@ Committed **prompts** and **assistant text** are **research records** for transp
 | [`docs/RESEARCH_MONOGRAPH.md`](llm-safety-experiment/docs/RESEARCH_MONOGRAPH.md) | Primary narrative |
 | [`LLM_SAFETY_EXPERIMENT_REPORT.md`](llm-safety-experiment/LLM_SAFETY_EXPERIMENT_REPORT.md) | Full technical report |
 | [`PROVENANCE.md`](llm-safety-experiment/PROVENANCE.md) | Artifact chain |
-| [`CONTRIBUTING.md`](llm-safety-experiment/CONTRIBUTING.md) | Contributor workflow |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | Contributor workflow (canonical; root) |
+| [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) | Community standards |
 | [`docs/README.md`](llm-safety-experiment/docs/README.md) | Docs index |
 
-Contributions via issues and PRs are welcome per [`CONTRIBUTING.md`](llm-safety-experiment/CONTRIBUTING.md).
+Contributions via issues and PRs are welcome per [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).
